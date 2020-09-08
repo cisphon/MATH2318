@@ -1,0 +1,76 @@
+
+.vs/CMake Overview
+.vs/MATH2318/v16/.suo
+.vs/MATH2318/v16/Browse.VC.db
+.vs/MATH2318/v16/Browse.VC.db-shm
+.vs/MATH2318/v16/Browse.VC.db-wal
+.vs/MATH2318/v16/Browse.VC.opendb
+.vs/MATH2318/v16/ipch/AutoPCH/57df7edf502408b6/MATH2318.ipch
+.vs/MATH2318/v16/ipch/AutoPCH/dd9d4f99e00c7c50/MATH2318.ipch
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+Debug/MATH2318.exe
+Debug/MATH2318.ilk
+Debug/MATH2318.pdb
+MATH2318.sln
+MATH2318/Debug/MATH2318.log
+MATH2318/Debug/MATH2318.obj
+MATH2318/Debug/MATH2318.tlog/CL.command.1.tlog
+MATH2318/Debug/MATH2318.tlog/CL.read.1.tlog
+MATH2318/Debug/MATH2318.tlog/CL.write.1.tlog
+MATH2318/Debug/MATH2318.tlog/link.command.1.tlog
+MATH2318/Debug/MATH2318.tlog/link.read.1.tlog
+MATH2318/Debug/MATH2318.tlog/link.write.1.tlog
+MATH2318/Debug/MATH2318.tlog/MATH2318.lastbuildstate
+MATH2318/Debug/vc142.idb
+MATH2318/Debug/vc142.pdb
+MATH2318/MATH2318.cpp
+MATH2318/MATH2318.vcxproj
+MATH2318/MATH2318.vcxproj.filters
+MATH2318/MATH2318.vcxproj.user
+MATH2318/Release/MATH2318.log
+MATH2318/Release/MATH2318.obj
+MATH2318/Release/MATH2318.tlog/CL.command.1.tlog
+MATH2318/Release/MATH2318.tlog/CL.read.1.tlog
+MATH2318/Release/MATH2318.tlog/CL.write.1.tlog
+MATH2318/Release/MATH2318.tlog/link.command.1.tlog
+MATH2318/Release/MATH2318.tlog/link.read.1.tlog
+MATH2318/Release/MATH2318.tlog/link.write.1.tlog
+MATH2318/Release/MATH2318.tlog/MATH2318.lastbuildstate
+MATH2318/Release/MATH2318.tlog/MATH2318.write.1u.tlog
+MATH2318/Release/vc142.pdb
+out/build/x64-Debug (default)/.cmake/api/v1/query/client-MicrosoftVS/query.json
+out/build/x64-Debug (default)/.cmake/api/v1/reply/cache-v2-8891b2e19dcaa3bb2354.json
+out/build/x64-Debug (default)/.cmake/api/v1/reply/cmakeFiles-v1-4b7bf89c33cba2d63d22.json
+out/build/x64-Debug (default)/.cmake/api/v1/reply/codemodel-v2-a03f5d07dc7533b269c9.json
+out/build/x64-Debug (default)/.cmake/api/v1/reply/index-2020-08-26T20-21-06-0708.json
+out/build/x64-Debug (default)/.cmake/api/v1/reply/target-MATH2318-Debug-fe8c61b155732f40baa3.json
+out/build/x64-Debug (default)/build.ninja
+out/build/x64-Debug (default)/cmake_install.cmake
+out/build/x64-Debug (default)/CMakeCache.txt
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeCCompiler.cmake
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeCXXCompiler.cmake
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeDetermineCompilerABI_C.bin
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeDetermineCompilerABI_CXX.bin
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeRCCompiler.cmake
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeSystem.cmake
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdC/CMakeCCompilerId.c
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdC/CMakeCCompilerId.exe
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdC/CMakeCCompilerId.obj
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe
+out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.obj
+out/build/x64-Debug (default)/CMakeFiles/cmake.check_cache
+out/build/x64-Debug (default)/CMakeFiles/CMakeOutput.log
+out/build/x64-Debug (default)/CMakeFiles/ShowIncludes/foo.h
+out/build/x64-Debug (default)/CMakeFiles/ShowIncludes/main.c
+out/build/x64-Debug (default)/CMakeFiles/ShowIncludes/main.obj
+out/build/x64-Debug (default)/CMakeFiles/TargetDirectories.txt
+out/build/x64-Debug (default)/rules.ninja
+out/build/x64-Debug (default)/Testing/Temporary/LastTest.log
+out/build/x64-Debug (default)/VSInheritEnvironments.txt
+Release/MATH2318.exe
+Release/MATH2318.iobj
+Release/MATH2318.ipdb
+Release/MATH2318.pdb

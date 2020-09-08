@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Eigen/Dense>
+#include <boost/integer/common_factor_rt.hpp>
 
 namespace MATH2318 {
     namespace Tools {
@@ -13,6 +14,37 @@ namespace MATH2318 {
             if (A.transpose() == -A)
                 return true;
             return false;
+        }
+
+        std::string float_to_ratio(float f) {
+            // if it can be expressed as an int, don't compute for a ratio.
+            if (static_cast<int>(f) == f)
+                return std::to_string(static_cast<int>(f));
+
+            for (int n = -100; n <= 100; ++n)
+            {
+                for (int d = -100; d <= 100; ++d)
+                {
+                    if (n / static_cast<float> (d) == f)
+                    {
+                        int gcd = boost::integer::gcd(n, d);
+                        return std::to_string(n / gcd) + "/" + std::to_string(d / gcd);
+                    }
+                }
+            }
+
+            return "welp"; // didn't find a ratio!
+        }
+
+        void print_matrix_ratios(Eigen::MatrixXf A) {
+            for (int r = 0; r < A.rows(); ++r)
+            {
+                for (int c = 0; c < A.cols(); ++c)
+                {
+                    std::cout << Tools::float_to_ratio(A(r, c)) << " ";
+                }
+                std::cout << std::endl;
+            }
         }
     }
 
@@ -420,13 +452,195 @@ namespace MATH2318 {
         }
     }
 
+    namespace HW3 {
+        void question1() {
+            Eigen::MatrixXf A(2,2);
+            A << -1, 1,
+                -1, 2;
+            Eigen::MatrixXf B(2,2);
+            B << -2, 1,
+                -1, 1;
+
+            std::cout << A * B << std::endl;
+            std::cout << B * A << std::endl;
+        }
+
+        void question3() {
+            Eigen::MatrixXf A(2,2);
+           
+            A << 1, 2,
+                3, 5;
+
+            std::cout << A.inverse() << std::endl;
+        }
+
+        void question4() {
+            Eigen::MatrixXf A(3, 3);
+
+            A << -2, -3, 3,
+                1, 1, -1,
+                -1, -1, 2;
+
+            std::cout << A.inverse() << std::endl;
+        }
+
+        void question5() {
+            Eigen::MatrixXf A(3, 3);
+
+            A << -1, 1, 2,
+                3, -10, 5,
+                5, -19, 16;
+
+            std::cout << A.inverse() << std::endl; // DNE
+        }
+
+        void question6() {
+            Eigen::MatrixXf A(4, 4);
+
+            A << 20, 0, 0, 0,
+                0, -4, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, -3;
+
+            std::cout << A.inverse() << std::endl; // DNE
+        }
+
+        void question7() {
+            Eigen::MatrixXf A(2, 2);
+
+            A << 1, -4,
+                -7, 4;
+
+            Eigen::MatrixXf AI = A.inverse();
+           
+            Tools::print_matrix_ratios(AI);
+        }
+
+        void question8() {
+            Eigen::MatrixXf A(2, 2);
+
+            A << 6, -2,
+                -9, 3;
+
+            Eigen::MatrixXf AI = A.inverse();
+
+            Tools::print_matrix_ratios(AI);
+        }
+
+        void question9() {
+            Eigen::MatrixXf A(2, 2);
+            A << 1, 2,
+                -2, -3;
+            A = A.inverse();
+
+            Eigen::MatrixXf B(2, 2);
+            B << 1, 1,
+                -1, 0;
+            B = B.inverse();
+
+            // (a) (AB)^-1
+            std::cout << (A * B).inverse() << std::endl << "~~~~~~~~" << std::endl;
+
+            // (b) (A^T)^-1
+            std::cout << (A.transpose()).inverse() << std::endl << "~~~~~~~~" << std::endl;
+
+            // (c) (2A)^-1
+            std::cout << (2 * A).inverse() << std::endl;
+        }
+
+        // doesn't solve system of equations properly.
+        void question10() {
+            Eigen::MatrixXf M(2, 2);
+            M << 1, 2,
+                1, -2;
+            Eigen::VectorXf A_V(M.rows());
+            A_V << 1, -3;
+
+            Eigen::VectorXf B_V(M.rows());
+            A_V << 10, -2;
+
+
+            // (a) 
+            std::cout << M.colPivHouseholderQr().solve(A_V) << std::endl << "~~~~~~" << std::endl;
+
+            // (b) 
+            std::cout << M.colPivHouseholderQr().solve(B_V);
+        }
+
+        // doesn't solve system of equations properly.
+        void question11() {
+            Eigen::MatrixXf A_M(3, 3);
+            A_M << 1, 2, 1,
+                1, 2, -1,
+                1, -2, 1;
+            Eigen::VectorXf A_V(A_M.rows());
+            A_V << 0, 2, -4;
+
+
+            Eigen::MatrixXf B_M(3, 3);
+            A_M << 1, 2, 1,
+                1, 2, -1,
+                1, -2, 1;
+            Eigen::VectorXf B_V(B_M.rows());
+            A_V << -1, -3, 3;
+
+            // (a) 
+            std::cout << A_M.colPivHouseholderQr().solve(A_V) << std::endl << "~~~~~~" << std::endl;
+
+            // (b) 
+            std::cout << B_M.colPivHouseholderQr().solve(B_V);
+        }
+
+        //https://www.slader.com/discussion/question/find-x-such-that-the-matrix-is-singular-a-4-x-2-3/
+        void question12() {
+            int a = 4, b = -6, c = -3;
+
+            float d = (a * b) / c;
+
+            std::cout << d << std::endl;
+        }
+
+        // https://www.symbolab.com/solver/matrix-inverse-calculator/
+        void question13() {
+
+        }
+
+        void question15() {
+            Eigen::MatrixXf A(2, 2);
+
+            A << 0, 1,
+                1, 0;
+
+            std::cout << A.inverse() << std::endl;
+        }
+
+        void question16() {
+            Eigen::MatrixXf A(2, 2);
+
+            A << 5, 0,
+                0, 1;
+
+            std::cout << A.inverse() << std::endl;
+        }
+
+        void question17() {
+            Eigen::MatrixXf A(3, 3);
+
+            A << 1, 0, 0,
+                0, 0, 1,
+                0, 1, 0;
+
+            std::cout << A.inverse() << std::endl;
+        }
+    }
+
     namespace QUIZ1 {
         void question1() {
             Eigen::MatrixXf m(3, 3);
 
             m << -1, 1, -1,
                 0, 3, 1,
-                0, 0, 1 / 5.0;
+                0, 0, 1 / static_cast<float> (5.0);
 
             Eigen::VectorXf v(m.rows());
             v << 0, 5, 0;
@@ -468,9 +682,46 @@ namespace MATH2318 {
 
             std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
         }
+
+    }
+
+    namespace QUIZ2 {
+        void question1() {
+            Eigen::MatrixXf A(2, 3);
+            A << 0, 0, -1,
+                3, -4, 6;
+
+            Eigen::MatrixXf B(2, 2);
+            B << 4, -3,
+                -1, 8;
+
+            std::cout << 2 * A << std::endl;
+        }
+
+        void question2() {
+            Eigen::MatrixXf A(3, 2);
+            A << 2, 1,
+                -4, 4,
+                1, 6;
+
+            Eigen::MatrixXf B(3, 3);
+            B << 0, -1, 0,
+                4, 0, 1,
+                8, -1, 7;
+
+            // (a) AB
+            //std::cout << A * B << std::endl;
+
+            // (b) BA
+            std::cout << B * A << std::endl;
+        }
+
+        void question3() {
+            
+        }
     }
 }
 
 int main() {
-    MATH2318::HW2::question22();
+    MATH2318::HW3::question12();
 }
