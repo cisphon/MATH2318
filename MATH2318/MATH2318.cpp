@@ -46,6 +46,13 @@ namespace MATH2318 {
                 std::cout << std::endl;
             }
         }
+
+        Eigen::MatrixXf pow_of_matrix(Eigen::MatrixXf A, float n) {
+            for (int r = 0; r < A.rows(); ++r)
+                for (int c = 0; c < A.cols(); ++c)
+                    A(r, c) = std::pow(A(r, c), n);
+            return A;
+        }
     }
 
     namespace HW1 {
@@ -716,12 +723,90 @@ namespace MATH2318 {
             std::cout << B * A << std::endl;
         }
 
-        void question3() {
-            
+        void question4() {
+            Eigen::MatrixXf A_M(3, 3);
+            A_M << 1, -5, 2,
+                -3, 1, -1,
+                0, -2, 5;
+
+            Eigen::VectorXf A_V(A_M.rows());
+            A_V << -15, -2, -11;
+
+            std::cout << A_M.colPivHouseholderQr().solve(A_V) << std::endl;
+        }
+
+        void question5() {
+            Eigen::MatrixXf A(2, 2);
+            A << 0, 3,
+                -3, 0;
+
+            std::cout << Tools::isSymmetric(A) << std::endl;
+
+            std::cout << Tools::isSkewSymmetric(A) << std::endl;
+        }
+
+        void question6() {
+            Eigen::MatrixXf A(2, 3);
+            A << 1, -4, 0,
+                3, 0, 2;
+
+            Eigen::MatrixXf B(2, 3);
+            B << 0, 1, 3,
+                -2, 2, -6;
+
+            std::cout << 4 * (A - B) << std::endl;
+        }
+
+        void question7() {
+            Eigen::MatrixXf A(2, 2);
+            A << 1, 2,
+                0, -1;
+
+            Eigen::MatrixXf I = Eigen::MatrixXf::Identity(A.rows(), A.cols());
+
+            std::cout << A + I*A << std::endl;
+        }
+
+        void question8() {
+            Eigen::MatrixXf A(2, 3);
+            A << 1, 2, -1,
+                2, 0, 4;
+           
+            Eigen::MatrixXf a = A.transpose() * A;
+            // A^T * A
+            std::cout << a << std::endl << "~~~~~~~~~~~" << std::endl;
+
+            Eigen::MatrixXf b = A * A.transpose();
+            // A * A^T
+            std::cout << b << std::endl;
+
+            std::cout << Tools::isSymmetric(a) << std::endl;
+            std::cout << Tools::isSymmetric(b) << std::endl;
+        }
+
+        void question9() {
+            Eigen::MatrixXf A(3, 3);
+            A << 1, 0, 0,
+                0, 1, 0,
+                0, 0, -1;
+
+            int n = 19;
+
+            std::cout << Tools::pow_of_matrix(A, n) << std::endl;
+        }
+
+        void question10() {
+            Eigen::MatrixXf B(2, 2);
+            B << 25, 0,
+                0, 9;
+
+            float n = 2;
+
+            std::cout << Tools::pow_of_matrix(B, 1 / n) << std::endl;
         }
     }
 }
 
 int main() {
-    MATH2318::HW3::question12();
+    MATH2318::QUIZ2::question4();
 }
