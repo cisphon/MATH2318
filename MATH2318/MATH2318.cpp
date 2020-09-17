@@ -1,6 +1,6 @@
 #include <iostream>
+#include <numeric>
 #include <Eigen/Dense>
-#include <boost/integer/common_factor_rt.hpp>
 
 namespace MATH2318 {
     namespace Tools {
@@ -27,7 +27,7 @@ namespace MATH2318 {
                 {
                     if (n / static_cast<float> (d) == f)
                     {
-                        int gcd = boost::integer::gcd(n, d);
+                        int gcd = std::gcd(n, d);
                         return std::to_string(n / gcd) + "/" + std::to_string(d / gcd);
                     }
                 }
@@ -113,87 +113,53 @@ namespace MATH2318 {
             std::cout << m2 << std::endl;
         }
 
-        void question9(bool cheat) {
-            if (cheat) {
-                Eigen::MatrixXf m(3, 3);
-                m << 2, 1, -1,
-                    1, -1, 1,
-                    0, 1, 2;
-                Eigen::VectorXf v(m.rows());
-                v << 3, 0, 1;
+        void question9() {
+            Eigen::MatrixXf m(3, 3);
+            m << 2, 1, -1,
+                 1, -1, 1,
+                 0, 1, 2;
+            Eigen::VectorXf v(m.rows());
+            v << 3, 0, 1;
 
-                std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
-            }
-            else {
-                Eigen::MatrixXf m(3, 4);
-                m << 2, 1, -1, 3,
-                    1, -1, 1, 0,
-                    0, 1, 2, 1;
-
-                Eigen::MatrixXf m2(m);
-
-                m2.row(0) += m2.row(1); // add row 2 to row 1
-                m2.row(1) += m2.row(2); // add row 3 to row 2
-
-                std::cout << m2 << std::endl; // Use this to solve for x, y, z.
-            }
+            std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
         }
 
-        void question13(bool cheat) {
-            if (cheat) {
-                Eigen::MatrixXf m(3, 2);
+        void question13() {
+            Eigen::MatrixXf m(3, 2);
 
-                m << -3, 5,
-                    3, 4,
-                    4, -8;
+            m << -3, 5,
+                3, 4,
+                4, -8;
 
-                Eigen::VectorXf v(m.rows());
-                v << -31, -14, 48;
+            Eigen::VectorXf v(m.rows());
+            v << -31, -14, 48;
 
-                std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
-            }
-            else {
-                Eigen::MatrixXf m(3, 2);
-
-                m << -3, 5,
-                    3, 4,
-                    4, -8;
-            }
+            std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
         }
 
-        void question14(bool cheat) {
-            if (cheat) {
-                Eigen::MatrixXf m(3, 3);
+        void question14() {
+            Eigen::MatrixXf m(3, 3);
 
-                m << 1, 0, -3,
-                    3, 1, -2,
-                    2, 2, 1;
+            m << 1, 0, -3,
+                3, 1, -2,
+                2, 2, 1;
 
-                Eigen::VectorXf v(m.rows());
-                v << -7, -5, -3;
+            Eigen::VectorXf v(m.rows());
+            v << -7, -5, -3;
 
-                std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
-            }
-            else {
-
-            }
+            std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
         }
 
-        void question15(bool cheat) {
-            if (cheat) {
-                Eigen::MatrixXf m(2, 4);
+        void question15() {
+            Eigen::MatrixXf m(2, 4);
 
-                m << 4, 12, -7, -20,
-                    3, 9, -5, -28;
+            m << 4, 12, -7, -20,
+                3, 9, -5, -28;
 
-                Eigen::VectorXf v(m.rows());
-                v << 28, 38;
+            Eigen::VectorXf v(m.rows());
+            v << 28, 38;
 
-                std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
-            }
-            else {
-
-            }
+            std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
         }
     }
 
@@ -1051,7 +1017,6 @@ namespace MATH2318 {
             std::cout << L * y << std::endl;
         }
     }
-
 
 }
 
