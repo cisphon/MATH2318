@@ -74,3 +74,6 @@ Release/MATH2318.exe
 Release/MATH2318.iobj
 Release/MATH2318.ipdb
 Release/MATH2318.pdb
+*.ipch
+*.obj
+*.recipe
