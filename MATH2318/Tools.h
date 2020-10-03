@@ -7,6 +7,8 @@
 
 #define PI atan(1) * 4
 
+#define DEBUGGING true
+
 namespace MATH2318::Tools {
 
     float distance(Eigen::VectorXf u, Eigen::VectorXf v)
@@ -24,19 +26,25 @@ namespace MATH2318::Tools {
         return (degrees * (PI / 180.0));
     }
 
-    float angle_between_vectors(Eigen::VectorXf u, Eigen::VectorXf v) {
+    float angle_between_two_vectors_radians(Eigen::VectorXf u, Eigen::VectorXf v) {
         float a = u.norm();
         float b = v.norm();
         float d = u.dot(v);
 
         float rads = acos(d / (a * b));
 
+#if DEBUGGING
         std::cout << u.squaredNorm() << std::endl;
         std::cout << v.squaredNorm() << std::endl;
         std::cout << u.dot(v) << std::endl;
+#endif
+
+        return rads;
+    }
 
 
-        return Tools::radians_to_degrees(rads);
+    float angle_between_vectors_degrees(Eigen::VectorXf u, Eigen::VectorXf v) {
+        return radians_to_degrees(angle_between_two_vectors_radians(u,v));
     }
 
     bool holds_triangle_inequality(Eigen::VectorXf u, Eigen::VectorXf v) {
@@ -66,8 +74,8 @@ namespace MATH2318::Tools {
     }
 
     void orthogonal_parallel_or_neither(Eigen::VectorXf u, Eigen::VectorXf v) {
-        bool orthogonal = Tools::is_orthogonal(u, v);
-        bool parallel = Tools::is_parallel(u, v);
+        bool orthogonal = is_orthogonal(u, v);
+        bool parallel = is_parallel(u, v);
 
         if (orthogonal || parallel) {
             if (orthogonal)
@@ -113,7 +121,7 @@ namespace MATH2318::Tools {
         {
             for (int c = 0; c < A.cols(); ++c)
             {
-                std::cout << Tools::float_to_ratio(A(r, c)) << " ";
+                std::cout << float_to_ratio(A(r, c)) << " ";
             }
             std::cout << std::endl;
         }

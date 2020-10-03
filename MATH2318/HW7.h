@@ -77,22 +77,21 @@ namespace MATH2318::HW7 {
 		Eigen::VectorXf u(2);
 		u << 1, 3;
 
-		Eigen::VectorXf u(2);
-		u << 2, -4;
+		Eigen::VectorXf v(2);
+		v << 2, -4;
 
+		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
 	}
 
 	// fuck you
 	void question21() {
 		Eigen::VectorXf u(3);
-		u << 2, 5, 0;
+		u << 5, 2, 4;
 
 		Eigen::VectorXf v(3);
-		v << -5, 2, 1;
+		v << -2, 5, 0;
 
-		double angle = Tools::angle_between_vectors(u, v);
-
-		std::cout << Tools::degrees_to_radians(angle) << std::endl;
+		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
 	}
 
 	void question22() {
