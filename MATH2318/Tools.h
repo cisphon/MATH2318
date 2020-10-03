@@ -1,10 +1,85 @@
 #pragma once
 
 #include <iostream>
+#include <math.h>
 #include <numeric>
 #include <Eigen/Dense>
 
+#define PI atan(1) * 4
+
 namespace MATH2318::Tools {
+
+    float distance(Eigen::VectorXf u, Eigen::VectorXf v)
+    {
+        float a = (v(0) - u(0)) * (v(0) - u(0));
+        float b = (v(1) - u(1)) * (v(1) - u(1));
+        return sqrt(a + b);
+    }
+
+    double radians_to_degrees(double radian) {
+        return (radian * (180.0 / PI));
+    }
+
+    double degrees_to_radians(double degrees) {
+        return (degrees * (PI / 180.0));
+    }
+
+    float angle_between_vectors(Eigen::VectorXf u, Eigen::VectorXf v) {
+        float a = u.norm();
+        float b = v.norm();
+        float d = u.dot(v);
+
+        float rads = acos(d / (a * b));
+
+        std::cout << u.squaredNorm() << std::endl;
+        std::cout << v.squaredNorm() << std::endl;
+        std::cout << u.dot(v) << std::endl;
+
+
+        return Tools::radians_to_degrees(rads);
+    }
+
+    bool holds_triangle_inequality(Eigen::VectorXf u, Eigen::VectorXf v) {
+        return (u + v).norm() <= u.norm() + v.norm();
+    }
+
+    bool is_parallel(Eigen::VectorXf u, Eigen::VectorXf v)
+    {
+        if (!u.isZero() && !v.isZero())
+        {
+            for (float num = 1; num <= 100; ++num)
+            {
+                for (float den = 1; den <= 100; ++den)
+                {
+                    float c = num / den;
+                    if ((u * c == v) || (u == c * v) || (u * -c == v) || (u == -c * v))
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    bool is_orthogonal(Eigen::VectorXf u, Eigen::VectorXf v)
+    {
+        return u.dot(v) == 0 ? true : false;
+    }
+
+    void orthogonal_parallel_or_neither(Eigen::VectorXf u, Eigen::VectorXf v) {
+        bool orthogonal = Tools::is_orthogonal(u, v);
+        bool parallel = Tools::is_parallel(u, v);
+
+        if (orthogonal || parallel) {
+            if (orthogonal)
+                std::cout << "Orthogonal" << std::endl;
+            if (parallel)
+                std::cout << "Parallel" << std::endl;
+        }
+        else {
+            std::cout << "Neither" << std::endl;
+        }
+    }
+
     bool is_symmetric(Eigen::MatrixXf A) {
         return A.transpose() == A;
     }
@@ -123,10 +198,11 @@ namespace MATH2318::Tools {
 
     std::string vectorxf_linear_combo_3(Eigen::VectorXf u1, Eigen::VectorXf u2,
         Eigen::VectorXf u3, Eigen::VectorXf v) {
+        float width = 100;
         // shitty iterative solution to find linear combo
-        for (float a = -50; a <= 50; ++a) {
-            for (float b = -100; b <= 100; ++b) {
-                for (float c = -50; c <= 50; ++c) {
+        for (float a = -width; a <= width; ++a) {
+            for (float b = -width; b <= width; ++b) {
+                for (float c = -width; c <= width; ++c) {
                     if (a * u1 + b * u2 + c * u3 == v) {
                         return std::to_string(a) + " " + std::to_string(b) + " " + std::to_string(c);
                     }
@@ -138,7 +214,7 @@ namespace MATH2318::Tools {
     }
 
     std::string matrixxf_linear_combo_2(Eigen::MatrixXf A, Eigen::MatrixXf B, Eigen::MatrixXf M) {
-        int width = 10;
+        int width = 100;
         for (int a = -width; a <= width; ++a)
         {
             for (int b = -width; b <= width; ++b)

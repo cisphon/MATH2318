@@ -2,7 +2,7 @@
 
 #include "Tools.h"
 
-namespace  MATH2318::TEST1 {
+namespace MATH2318::TEST1 {
     void question3() {
         Eigen::MatrixXf A(4, 3);
         A << 3, 3, 12,
