@@ -11,11 +11,42 @@
 
 namespace MATH2318::Tools {
 
+    // this one has a custom inner product
     float distance(Eigen::VectorXf u, Eigen::VectorXf v)
     {
-        float a = (v(0) - u(0)) * (v(0) - u(0));
-        float b = (v(1) - u(1)) * (v(1) - u(1));
-        return sqrt(a + b);
+
+    }
+
+    float distance(Eigen::VectorXf u, Eigen::VectorXf v)
+    {
+        float sum = 0.0f;
+        if (u.size() == v.size())
+        {
+            for (int i = 0; i < u.size(); ++i)
+            {
+                sum += ((v(i) - u(i)) * (v(i) - u(i)));
+            }
+
+            return sqrt(sum);
+        }
+
+        return -1; // does not exist
+    }
+
+    float distanceSquared(Eigen::VectorXf u, Eigen::VectorXf v)
+    {
+        float sum = 0.0f;
+        if (u.size() == v.size())
+        {
+            for (int i = 0; i < u.size(); ++i)
+            {
+                sum += ((v(i) - u(i)) * (v(i) - u(i)));
+            }
+
+            return sum;
+        }
+
+        return -1; // does not exist
     }
 
     double radians_to_degrees(double radian) {
@@ -41,7 +72,6 @@ namespace MATH2318::Tools {
 
         return rads;
     }
-
 
     float angle_between_vectors_degrees(Eigen::VectorXf u, Eigen::VectorXf v) {
         return radians_to_degrees(angle_between_two_vectors_radians(u,v));

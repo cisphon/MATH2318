@@ -4,6 +4,31 @@
 
 namespace MATH2318::HW7 {
 
+	void question9() {
+		float c, d;
+		c = d = 1;
+
+		float b = c - 2 * d;
+		float a = 2 * c - 4 * b;
+
+		std::cout << a << " " << b << " " << c << " " << d << std::endl;
+	}
+
+	// https://www.chegg.com/homework-help/questions-and-answers/find-basis-dimension-solution-space-homogeneous-system-linear-equations-x-y-z-0-3x-y-0-0-3-q11848773
+	void question10() {
+
+	}
+
+    // https://www.chegg.com/homework-help/questions-and-answers/use-fact-matrices-b-row-equivalent-2-5-8-0-17-1-3-5-1-5-1-1-1-3-19-1-7-13-5-3-b-1-0-1-0-1--q15440329
+	void question11() {
+
+	}
+
+	// https://www.homeworklib.com/questions/1494996/consider-the-system-of-equations-shown-below-2x
+	void question12() {
+
+	}
+
 	void question13() {
 		Eigen::VectorXf v(4);
 		v << 2, 0, -5, -3;
@@ -160,6 +185,29 @@ namespace MATH2318::HW7 {
 			std::cout << "Yes" << std::endl;
 		else
 			std::cout << "No" << std::endl;
+	}
+
+	// https://www.chegg.com/homework-help/questions-and-answers/let-v-v1-v2-vector-r2-show-v2-v1-orthogonal-v-use-fact-find-two-unit-vectors-orthogonal-gi-q9152569
+	void question27() {
+		Eigen::VectorXf v(2);
+		v << 3, 4;
+
+		Eigen::VectorXf vb(2);
+		vb << v(1), -v(0);
+
+
+		Eigen::VectorXf va(2);
+		va << -vb(0), vb(1);
+
+
+		std::cout << "~~~~~~~~~" << std::endl;
+		std::cout << vb / vb.norm() << std::endl;
+		std::cout << "~~~~~~~~~" << std::endl;
+
+
+		std::cout << "~~~~~~~~~" << std::endl;
+		std::cout << va / va.norm() << std::endl;
+		std::cout << "~~~~~~~~~" << std::endl;
 	}
 
 	void question28() {
