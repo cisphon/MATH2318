@@ -7,14 +7,20 @@
 
 #define PI atan(1) * 4
 
-#define DEBUGGING true
+#define DEBUGGING false
 
 namespace MATH2318::Tools {
 
-    // this one has a custom inner product
-    float distance(Eigen::VectorXf u, Eigen::VectorXf v)
-    {
+    Eigen::VectorXf proj_a_on_b(Eigen::VectorXf a, Eigen::VectorXf b) {
+#if DEBUGGING
+        std::cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << std::endl;
+        std::cout << a.dot(b) << std::endl;
+        std::cout << a.squaredNorm() << std::endl;
+        std::cout << a << std::endl;
+        std::cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << std::endl;
+#endif
 
+        return (a.dot(b) / a.squaredNorm()) * b;
     }
 
     float distance(Eigen::VectorXf u, Eigen::VectorXf v)

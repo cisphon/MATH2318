@@ -26,9 +26,15 @@ namespace MATH2318::HW8 {
 
 		// (u1 * v1) + 3(u2 * v2) + (u3 * v3)
 
-		std::cout << "sqrt(" << u(0) * u(0) + 3 * u(1) * u(1) * u(2) * u(2) << ");" << std::endl;
-		std::cout << "sqrt(" << v(0) * v(0) + 3 * v(1) * v(1) * v(2) * v(2) << ");" << std::endl;
-		std::cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << std::endl;
+		std::cout << u(0) * v(0) + 3 * u(1) * v(1) + u(2) * v(2) << std::endl;
+		std::cout << "sqrt(" << u(0) * u(0) + 3 * u(1) * u(1) + u(2) * u(2) << ");" << std::endl;
+		std::cout << "sqrt(" << v(0) * v(0) + 3 * v(1) * v(1) + v(2) * v(2) << ");" << std::endl;
+
+		Eigen::VectorXf uv(3);
+		uv = u - v;
+		
+		// <u-v, u-v>
+		std::cout << "sqrt(" << uv(0) * uv(0) + 3 * uv(1) * uv(1) + uv(2) * uv(2) << ");" << std::endl;
 	}
 
 	void question3() {
@@ -55,7 +61,33 @@ namespace MATH2318::HW8 {
 		Eigen::VectorXf v(3);
 		v << 5, -4, 3;
 
+		float uv = u(0) * v(0) + 2 * u(1) * v(1) + u(2) * v(2);
 
+		std::cout << acos(uv / (u.norm() * v.norm())) << std::endl;
+	}
 
+	// https://www.chegg.com/homework-help/questions-and-answers/find-angle-vectors-x-2x3-g-x-4x2-f-g-f-x-g-x-dx-radians-q32263241
+	void question6() {
+		float fg = 0; // integral of the functions.
+		std::cout << acos(fg) << std::endl; // exactly pi / 2 radians
+	}
+
+	void question7() {
+		// lmao I just guessed
+
+	}
+
+	void question8() {
+		Eigen::VectorXf u(3);
+		//u << 1, -1, -2;
+		u << -1, -2, 1;
+
+		Eigen::VectorXf v(3);
+		//v << 1, 1, 2;
+		v << -1, 2, 1;
+
+		std::cout << Tools::proj_a_on_b(u, v) << std::endl;
+		std::cout << "~~~~~~~~~~~~~~~~~" << std::endl;
+		std::cout << Tools::proj_a_on_b(v, u) << std::endl;
 	}
 }
