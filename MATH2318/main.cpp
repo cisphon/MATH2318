@@ -16,5 +16,5 @@
 #include "QUIZ5.h"
 
 int main() {
-	MATH2318::HW8::question2();
+	MATH2318::HW8::question4();
 }	

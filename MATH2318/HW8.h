@@ -51,6 +51,22 @@ namespace MATH2318::HW8 {
 	}
 
 	void question4() {
+		// p(x) = 3 - 1x + 4x^2
+		// p(x) = 0 + 1x - 1x^2
+
+		// <p,q> = a0 * b0 + a1 * b1 + a2 * b2
+		float pq = 3 * 0 + -1 * 1 + 4 * -1;
+
+		std::cout << pq << std::endl;
+		
+		// |p| = sqrt(<p,p>)
+
+		std::cout << "sqrt(" << (3*3 + -1*-1 + 4*4) << ");" << std::endl;
+		std::cout << "sqrt(" << (0*0 + 1*1 -1*-1) << ");" << std::endl;
+
+		// |p-q| = d<p,q>
+
+		std::cout << "sqrt(" << ((3-0)*(3-0) + (-1-1)*(-1-1) + (4 - -1)*(4 - -1)) << ");" << std::endl;
 
 	}
 
