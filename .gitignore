@@ -77,3 +77,10 @@ Release/MATH2318.pdb
 *.ipch
 *.obj
 *.recipe
+MATH2318/x64/Debug/MATH2318.log
+*.tlog
+*.idb
+x64/Debug/MATH2318.exe
+x64/Debug/MATH2318.ilk
+x64/Debug/MATH2318.pdb
+MATH2318/x64/Debug/vc142.pdb
