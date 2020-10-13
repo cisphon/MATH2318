@@ -6,14 +6,13 @@ namespace MATH2318::HW2 {
     void question2() {
         Eigen::MatrixXf A(3, 2);
         A << 2, -1,
-            4, 6,
+             4, 6,
             -5, 3;
 
         Eigen::MatrixXf B(3, 2);
         B << 1, 4,
             -1, 5,
             1, 10;
-
 
         // (a) A + B
         std::cout << A + B << std::endl << "~~~~~~~~" << std::endl;

@@ -7,6 +7,7 @@
 #include "HW6.h"
 #include "HW7.h"
 #include "HW8.h"
+#include "HW9.h"
 
 #include "TEST1.h"
 
@@ -16,5 +17,5 @@
 #include "QUIZ5.h"
 
 int main() {
-	MATH2318::HW8::question4();
+	MATH2318::HW9::question1();
 }	
