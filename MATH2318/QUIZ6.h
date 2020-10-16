@@ -52,4 +52,22 @@ namespace MATH2318::QUIZ6 {
 		std::cout << "~~~~~~~~~~~~~~~~~" << std::endl;
 		std::cout << Tools::proj_a_on_b(v, u) << std::endl;
 	}
+
+	void question7() {
+		Eigen::VectorXf a(3);
+		a << -17, -4, -1;
+
+		Eigen::VectorXf b(3);
+		b << -1, 4, 1;
+
+		Eigen::VectorXf c(3);
+		c << 0, -1, 4;
+
+		std::cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << std::endl;
+		std::cout << (Tools::is_orthonormal(a, b) && Tools::is_orthonormal(b, c)) << std::endl;
+	}
+
+	void question8() {
+
+	}
 }

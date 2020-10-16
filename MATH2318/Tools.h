@@ -111,7 +111,7 @@ namespace MATH2318::Tools {
 
     bool is_orthonormal(Eigen::VectorXf u, Eigen::VectorXf v)
     {
-        return false;
+        return (u.norm() == v.norm() == 1);
     }
 
     void orthogonal_parallel_or_neither(Eigen::VectorXf u, Eigen::VectorXf v) {
