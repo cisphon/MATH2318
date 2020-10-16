@@ -77,7 +77,7 @@ namespace MATH2318::HW8 {
 		Eigen::VectorXf v(3);
 		v << 5, -4, 3;
 
-		float uv = u(0) * v(0) + 2 * u(1) * v(1) + u(2) * v(2);
+		float uv = u(0)*v(0) + 2*u(1)*v(1) + u(2)*v(2);
 
 		std::cout << acos(uv / (u.norm() * v.norm())) << std::endl;
 	}

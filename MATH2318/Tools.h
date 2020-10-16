@@ -109,6 +109,11 @@ namespace MATH2318::Tools {
         return u.dot(v) == 0 ? true : false;
     }
 
+    bool is_orthonormal(Eigen::VectorXf u, Eigen::VectorXf v)
+    {
+        return false;
+    }
+
     void orthogonal_parallel_or_neither(Eigen::VectorXf u, Eigen::VectorXf v) {
         bool orthogonal = is_orthogonal(u, v);
         bool parallel = is_parallel(u, v);

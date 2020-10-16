@@ -15,6 +15,7 @@
 #include "QUIZ2.h"
 #include "QUIZ3.h"
 #include "QUIZ5.h"
+#include "QUIZ6.h"
 
 int main() {
 	MATH2318::HW9::question1();
