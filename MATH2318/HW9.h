@@ -80,13 +80,25 @@ namespace MATH2318::HW9 {
 
 		Eigen::VectorXf w1 = v1;
 
+		//std::cout << w1.squaredNorm() << std::endl;
+
 		Eigen::VectorXf w2 = v2 - (v2.dot(w1)) / (w1.dot(w1)) * w1;
 
-		std::cout << v2.dot(w1) << std::endl;
-		std::cout << w1.dot(w1) << std::endl;
+		//std::cout << v2.dot(w1) << "/" << w1.dot(w1) << std::endl;
+
+		//std::cout << w2 << std::endl;
+
+		//std::cout << v2.dot(w1) << std::endl;
+		//std::cout << w1.dot(w1) << std::endl;
 
 		//std::cout << w1 << std::endl;
 		//std::cout << w2 << std::endl;
+
+		std::cout << v1.norm() << std::endl;
+		std::cout << "1/" << "sqrt(" << v1(0)*v1(0) << " + " << v1(1)*v1(1) << ");" << std::endl;
+
+		std::cout << w2.norm() << std::endl;
+		std::cout << "1/" << "sqrt(" << w2(0)*w2(0) << " + " << w2(1)*w2(1) << ");" << std::endl;
 
 		Eigen::VectorXf u1 = w1 / w1.norm();
 		Eigen::VectorXf u2 = w2 / w2.norm();
