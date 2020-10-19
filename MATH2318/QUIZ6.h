@@ -38,7 +38,13 @@ namespace MATH2318::QUIZ6 {
 
 		float uv = u(0)*v(0) + 2*u(1)*v(1);
 
+		std::cout << uv << "/(" << "sqrt(" << u.squaredNorm() << ") * sqrt(" << v.squaredNorm() << ");";
+
 		std::cout << acos(uv / (u.norm() * v.norm())) << std::endl;
+	}
+
+	void question4() {
+		std::cout << acos(0) << std::endl;
 	}
 
 	void question6() {
