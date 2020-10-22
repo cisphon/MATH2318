@@ -8,8 +8,11 @@
 #include "HW7.h"
 #include "HW8.h"
 #include "HW9.h"
+#include "HW10.h"
 
 #include "TEST1.h"
+
+#include "PTEST2.h"
 
 #include "QUIZ1.h"
 #include "QUIZ2.h"
@@ -18,5 +21,5 @@
 #include "QUIZ6.h"
 
 int main() {
-	MATH2318::QUIZ6::question3();
+	MATH2318::PTEST2::question2();
 }	
