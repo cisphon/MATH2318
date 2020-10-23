@@ -20,25 +20,25 @@ namespace MATH2318::HW10 {
 			std::cout << "Not Orthogonal" << std::endl;
 	}
 
+	// second problem on this \/
 	// https://www.chegg.com/homework-help/questions-and-answers/find-bases-four-fundamental-subspaces-matrix-basis-n-n-basis-r-r--q1227712
 	void question2() {
 		Eigen::MatrixXf A(2, 3);
-		A << 1, 3, 10,
-			0, 10, 0;
+		A << 1, 7, 1,
+			0, 8, 0;
 
-		/*
-		A << 1, 8, 2,
-			0, 9, 0;
-		*/
-
-		Eigen::VectorXf v(2);
-		v << 0, 0;
-
-		std::cout << A.colPivHouseholderQr().solve(v) << std::endl;
+		std::cout << A.transpose() << std::endl;
 	}
 
+	// http://www.math.odu.edu/~bogacki/cgi-bin/lat.cgi
 	void question3() {
+		Eigen::MatrixXf A(4, 4);
+		A << 1, 0, 0, 2,
+			0, 1, 1, 2,
+			1, 1, 1, 4,
+			1, 3, 3, 8;
 
+		std::cout << A.transpose() << std::endl;
 	}
 
 	// https://www.slader.com/discussion/question/find-a-least-squares-solution-of-3/
