@@ -124,4 +124,52 @@ namespace MATH2318::PTEST2 {
 		std::cout << Tools::proj_a_on_b(u, v) << std::endl << "~~~~~~" << std::endl;
 		std::cout << Tools::proj_a_on_b(v, u) << std::endl << "~~~~~~" << std::endl;
 	}
+
+	void question38() {
+		Eigen::VectorXf v1(3);
+		v1 << 3, 1, 0;
+
+		Eigen::VectorXf v2(3);
+		v2 << 0, 0, 3;
+
+		Eigen::VectorXf v3(3);
+		v3 << 1, 1, 1;
+
+		Eigen::VectorXf u1 = v1;
+
+		float v2u1 = v2.dot(u1);
+		float u1u1 = u1.dot(u1);
+
+		Eigen::VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
+
+		//std::cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+
+		/*
+		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		std::cout << v2u1 << "/" << u1u1 << "~~~~~~~~~~~~~~~~" << std::endl;
+		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		*/
+
+		//std::cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+
+		float v3u1 = v3.dot(u1);
+		u1u1 = u1.dot(u1);
+
+		float v3u2 = v3.dot(u2);
+		float u2u2 = u2.dot(u2);
+
+		Eigen::VectorXf u3 = v3 - (v3u1 / u1u1) * u1 - (v3u2 / u2u2) * u2;
+
+
+		//std::cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+
+		/*
+		std::cout << u1 << std::endl; /// u1.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
+		std::cout << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+
+
+		std::cout << u2 << std::endl; /// u2.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
+		std::cout << u3 << std::endl; /// u3.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
+		*/
+	}
 }
