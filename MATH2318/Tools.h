@@ -7,7 +7,7 @@
 
 #define PI atan(1) * 4
 
-#define DEBUGGING false
+#define DEBUGGING true
 
 namespace MATH2318::Tools {
 

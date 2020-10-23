@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "HW1.h"
 #include "HW2.h"
 #include "HW3.h"
@@ -21,5 +19,5 @@
 #include "QUIZ6.h"
 
 int main() {
-	MATH2318::PTEST2::question2();
+	MATH2318::HW10::question5();
 }	
