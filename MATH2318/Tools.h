@@ -247,7 +247,7 @@ namespace MATH2318::Tools {
 
     std::string vectorxf_linear_combo_3(Eigen::VectorXf u1, Eigen::VectorXf u2,
         Eigen::VectorXf u3, Eigen::VectorXf v) {
-        float width = 100;
+        float width = 50;
         // shitty iterative solution to find linear combo
         for (float a = -width; a <= width; ++a) {
             for (float b = -width; b <= width; ++b) {

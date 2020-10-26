@@ -9,6 +9,7 @@
 #include "HW10.h"
 
 #include "TEST1.h"
+#include "TEST2.h"
 
 #include "PTEST2.h"
 
@@ -19,5 +20,6 @@
 #include "QUIZ6.h"
 
 int main() {
-	MATH2318::PTEST2::question35();
+	//MATH2318::PTEST2::question34();
+	MATH2318::TEST2::question16();
 }	
