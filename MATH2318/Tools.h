@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include <math.h>
 #include <numeric>
 #include <Eigen/Dense>
@@ -9,9 +10,55 @@
 
 #define DEBUGGING false
 
+using namespace Eigen;
+
 namespace MATH2318::Tools {
 
-    Eigen::VectorXf proj_a_on_b(Eigen::VectorXf a, Eigen::VectorXf b) {
+    int gcd(int a, int b)
+    {
+        if (a == 0)
+            return b;
+        return gcd(b % a, a);
+    }
+
+    int findGCD(int arr[], int n)
+    {
+        int result = arr[0];
+        for (int i = 1; i < n; i++)
+        {
+            result = gcd(arr[i], result);
+
+            if (result == 1)
+            {
+                return 1;
+            }
+        }
+        return result;
+    }
+
+    std::vector<float> minor_of_matrix(MatrixXf A, int r, int c) {
+        std::vector<float> v;
+
+        for (int row = 0; row < A.rows(); row++)
+        {
+            for (int col = 0; col < A.cols(); col++)
+            {
+                // if not in that row or col
+                if (!(row == r - 1) || (col == c - 1)) 
+                {  
+                    v.push_back(A(row, col));
+                }
+            }
+        }
+        return v;
+    }
+
+    bool is_singular(MatrixXf a)
+    {
+        return a.determinant() == 0;
+    }
+
+    VectorXf proj_a_on_b(VectorXf a, VectorXf b) {
 #if DEBUGGING
         std::cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << std::endl;
         std::cout << a.dot(b) << std::endl;
@@ -23,7 +70,7 @@ namespace MATH2318::Tools {
         return (a.dot(b) / a.squaredNorm()) * b;
     }
 
-    float distance(Eigen::VectorXf u, Eigen::VectorXf v)
+    float distance(VectorXf u, VectorXf v)
     {
         float sum = 0.0f;
         if (u.size() == v.size())
@@ -39,7 +86,7 @@ namespace MATH2318::Tools {
         return -1; // does not exist
     }
 
-    float distanceSquared(Eigen::VectorXf u, Eigen::VectorXf v)
+    float distanceSquared(VectorXf u, VectorXf v)
     {
         float sum = 0.0f;
         if (u.size() == v.size())
@@ -63,7 +110,7 @@ namespace MATH2318::Tools {
         return (degrees * (PI / 180.0));
     }
 
-    float angle_between_two_vectors_radians(Eigen::VectorXf u, Eigen::VectorXf v) {
+    float angle_between_two_vectors_radians(VectorXf u, VectorXf v) {
         float a = u.norm();
         float b = v.norm();
         float d = u.dot(v);
@@ -79,15 +126,15 @@ namespace MATH2318::Tools {
         return rads;
     }
 
-    float angle_between_vectors_degrees(Eigen::VectorXf u, Eigen::VectorXf v) {
+    float angle_between_vectors_degrees(VectorXf u, VectorXf v) {
         return radians_to_degrees(angle_between_two_vectors_radians(u,v));
     }
 
-    bool holds_triangle_inequality(Eigen::VectorXf u, Eigen::VectorXf v) {
+    bool holds_triangle_inequality(VectorXf u, VectorXf v) {
         return (u + v).norm() <= u.norm() + v.norm();
     }
 
-    bool is_parallel(Eigen::VectorXf u, Eigen::VectorXf v)
+    bool is_parallel(VectorXf u, VectorXf v)
     {
         if (!u.isZero() && !v.isZero())
         {
@@ -104,17 +151,17 @@ namespace MATH2318::Tools {
         return false;
     }
 
-    bool is_orthogonal(Eigen::VectorXf u, Eigen::VectorXf v)
+    bool is_orthogonal(VectorXf u, VectorXf v)
     {
         return u.dot(v) == 0 ? true : false;
     }
 
-    bool is_orthonormal(Eigen::VectorXf u, Eigen::VectorXf v)
+    bool is_orthonormal(VectorXf u, VectorXf v)
     {
         return (u.norm() == v.norm() == 1);
     }
 
-    void orthogonal_parallel_or_neither(Eigen::VectorXf u, Eigen::VectorXf v) {
+    void orthogonal_parallel_or_neither(VectorXf u, VectorXf v) {
         bool orthogonal = is_orthogonal(u, v);
         bool parallel = is_parallel(u, v);
 
@@ -129,11 +176,11 @@ namespace MATH2318::Tools {
         }
     }
 
-    bool is_symmetric(Eigen::MatrixXf A) {
+    bool is_symmetric(MatrixXf A) {
         return A.transpose() == A;
     }
 
-    bool is_skew_symmetric(Eigen::MatrixXf A) {
+    bool is_skew_symmetric(MatrixXf A) {
         return A.transpose() == -A;
     }
     
@@ -157,7 +204,7 @@ namespace MATH2318::Tools {
         return "welp"; // didn't find a ratio!
     }
 
-    void print_matrix_ratios(Eigen::MatrixXf A) {
+    void print_matrix_ratios(MatrixXf A) {
         for (int r = 0; r < A.rows(); ++r)
         {
             for (int c = 0; c < A.cols(); ++c)
@@ -168,20 +215,20 @@ namespace MATH2318::Tools {
         }
     }
 
-    Eigen::MatrixXf pow_of_matrix(Eigen::MatrixXf A, float n) {
+    MatrixXf pow_of_matrix(MatrixXf A, float n) {
         for (int r = 0; r < A.rows(); ++r)
             for (int c = 0; c < A.cols(); ++c)
                 A(r, c) = std::pow(A(r, c), n);
         return A;
     }
 
-    Eigen::VectorXf points_to_vector(float x1, float y1, float x2, float y2) {
-        Eigen::VectorXf vec(2);
+    VectorXf points_to_vector(float x1, float y1, float x2, float y2) {
+        VectorXf vec(2);
         vec << (x2 - x1), (y2 - y1);
         return vec;
     }
 
-    std::string vectorxf_linear_combo_2(Eigen::VectorXf u, Eigen::VectorXf v, Eigen::VectorXf r) {
+    std::string vectorxf_linear_combo_2(VectorXf u, VectorXf v, VectorXf r) {
         // shitty iterative solution to find linear combo
         for (float a = -100; a <= 100; ++a) {
             for (float b = -100; b <= 100; ++b) {
@@ -195,7 +242,7 @@ namespace MATH2318::Tools {
         return "IMPOSSIBLE";
     }
 
-    std::string vectorxf_linear_combo_2_with_fractions(Eigen::VectorXf u, Eigen::VectorXf v, Eigen::VectorXf r) {
+    std::string vectorxf_linear_combo_2_with_fractions(VectorXf u, VectorXf v, VectorXf r) {
         float width = 100;
         // shitty iterative solution to find linear combo
         for (float a = -width; a <= width; ++a) {
@@ -245,8 +292,8 @@ namespace MATH2318::Tools {
         return "IMPOSSIBLE";
     }
 
-    std::string vectorxf_linear_combo_3(Eigen::VectorXf u1, Eigen::VectorXf u2,
-        Eigen::VectorXf u3, Eigen::VectorXf v) {
+    std::string vectorxf_linear_combo_3(VectorXf u1, VectorXf u2,
+        VectorXf u3, VectorXf v) {
         float width = 50;
         // shitty iterative solution to find linear combo
         for (float a = -width; a <= width; ++a) {
@@ -262,7 +309,7 @@ namespace MATH2318::Tools {
         return "IMPOSSIBLE";
     }
 
-    std::string matrixxf_linear_combo_2(Eigen::MatrixXf A, Eigen::MatrixXf B, Eigen::MatrixXf M) {
+    std::string matrixxf_linear_combo_2(MatrixXf A, MatrixXf B, MatrixXf M) {
         int width = 100;
         for (int a = -width; a <= width; ++a)
         {

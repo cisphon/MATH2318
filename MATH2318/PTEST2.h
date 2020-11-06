@@ -4,23 +4,23 @@
 
 namespace MATH2318::PTEST2 {
 	void question1() {
-		Eigen::VectorXf u(2);
+		VectorXf u(2);
 		u << 1, 3;
 
-		Eigen::VectorXf w(2);
+		VectorXf w(2);
 		w << 1, -2;
 
-		Eigen::VectorXf v(2);
+		VectorXf v(2);
 		v << 2, 1;
 
 		std::cout << Tools::vectorxf_linear_combo_2(u, w, v) << std::endl;
 	}
 
 	void question2() {
-		Eigen::VectorXf u(5);
+		VectorXf u(5);
 		u << 4, 4, 3, 4, 0;
 
-		Eigen::VectorXf v(5);
+		VectorXf v(5);
 		v << -3, -5, 6, 3, 8;
 
 		std::cout << u - v << std::endl << "~~~~~~~~~" << std::endl;
@@ -76,7 +76,7 @@ namespace MATH2318::PTEST2 {
 
 	// https://www.chegg.com/homework-help/questions-and-answers/use-fact-matrices-b-row-equivalent-2-5-8-0-17-1-3-5-1-5-1-1-1-3-19-1-7-13-5-3-b-1-0-1-0-1--q15440329
 	void question28() {
-		Eigen::MatrixXf A(4, 5);
+		MatrixXf A(4, 5);
 
 		int rank = 0;
 
@@ -86,10 +86,10 @@ namespace MATH2318::PTEST2 {
 	}
 
 	void question29() {
-		Eigen::VectorXf u(2);
+		VectorXf u(2);
 		u << -3, 3;
 
-		Eigen::VectorXf v(2);
+		VectorXf v(2);
 		v << 3, -3;
 
 		std::cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << std::endl;
@@ -97,50 +97,50 @@ namespace MATH2318::PTEST2 {
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-angle-vectors-round-answer-three-decimal-places-u-4-2-v-1-3-q11708077
 	void question30() {
-		Eigen::VectorXf u(2);
+		VectorXf u(2);
 		u << 4, 2;
 
-		Eigen::VectorXf v(2);
+		VectorXf v(2);
 		v << -1, -3;
 
 		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
 	}
 
 	void question31() {
-		Eigen::VectorXf u(3);
+		VectorXf u(3);
 		u << 3, 4, 0;
 
-		Eigen::VectorXf v(3);
+		VectorXf v(3);
 		v << 4, -3, 4;
 
 		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
 	}
 
 	void question32() {
-		Eigen::VectorXf u(4);
+		VectorXf u(4);
 		u << 1, 1, 0, 1;
 
-		Eigen::VectorXf v(4);
+		VectorXf v(4);
 		v << 3, 3, 3, 3;
 
 		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
 	}
 
 	void question33() {
-		Eigen::VectorXf u(4);
+		VectorXf u(4);
 		u << -8, 3 / 2.0, -7, 1 / 2.0;
 
-		Eigen::VectorXf v(4);
+		VectorXf v(4);
 		v << 4, -3 / 4.0, 7 / 2.0, -1 / 4.0;
 
 		Tools::orthogonal_parallel_or_neither(u, v);
 	}
 
 	void question34() {
-		Eigen::VectorXf u(2);
+		VectorXf u(2);
 		u << 5, -4;
 
-		Eigen::VectorXf v(2);
+		VectorXf v(2);
 		v << 3, 0;
 
 		float uv =  u(0) * v(0) + 2 * u(1) * v(1);
@@ -151,10 +151,10 @@ namespace MATH2318::PTEST2 {
 
 	// https://www.wolframalpha.com/input/?i=projection+%5B%7B4%2C+4%7D%2C+%7B-1%2C+2%7D%5D
 	void question35() {
-		Eigen::VectorXf u(2);
+		VectorXf u(2);
 		u << -1, 2;
 
-		Eigen::VectorXf v(2);
+		VectorXf v(2);
 		v << 4, 4;
 
 		std::cout << Tools::proj_a_on_b(u, v) << std::endl << "~~~~~~" << std::endl;
@@ -162,10 +162,10 @@ namespace MATH2318::PTEST2 {
 	}
 
 	void question36() {
-		Eigen::VectorXf u(3);
+		VectorXf u(3);
 		u << -1, 1, 2;
 
-		Eigen::VectorXf v(3);
+		VectorXf v(3);
 		v << -1, -1, 2;
 
 		std::cout << Tools::proj_a_on_b(u, v) << std::endl << "~~~~~~" << std::endl;
@@ -173,13 +173,13 @@ namespace MATH2318::PTEST2 {
 	}
 
 	void question37() {
-		Eigen::VectorXf a(3);
+		VectorXf a(3);
 		a << 4, 1, -1;
 
-		Eigen::VectorXf b(3);
+		VectorXf b(3);
 		b << -1, 4, 0;
 
-		Eigen::VectorXf c(3);
+		VectorXf c(3);
 		c << -4, -1, -17;
 
 		std::cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << std::endl;
@@ -188,16 +188,16 @@ namespace MATH2318::PTEST2 {
 	// just type the vectors into wolfram alpha and it will normalize it.
 	// https://www.wolframalpha.com/
 	void question38() {
-		Eigen::VectorXf v1(3);
+		VectorXf v1(3);
 		v1 << 1, 3, 0;
 
-		Eigen::VectorXf v2(3);
+		VectorXf v2(3);
 		v2 << 0, 0, 3;
 
-		Eigen::VectorXf v3(3);
+		VectorXf v3(3);
 		v3 << 1, 1, 1;
 
-		Eigen::VectorXf u1 = v1;  
+		VectorXf u1 = v1;  
 
 		//std::cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
 
@@ -205,7 +205,7 @@ namespace MATH2318::PTEST2 {
 		float u1u1 = u1.dot(u1);
 
 
-		Eigen::VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
+		VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
 
 		/*
 		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
@@ -222,7 +222,7 @@ namespace MATH2318::PTEST2 {
 		float u2u2 = u2.dot(u2);
 
 
-		Eigen::VectorXf u3 = v3 - (v3u1 / u1u1) * u1 - (v3u2 / u2u2) * u2;
+		VectorXf u3 = v3 - (v3u1 / u1u1) * u1 - (v3u2 / u2u2) * u2;
 
 		//
 		std::cout << v3 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
@@ -238,18 +238,18 @@ namespace MATH2318::PTEST2 {
 	// just type the vectors into wolfram alpha and it will normalize it.
 	// https://www.wolframalpha.com/
 	void question39() {
-		Eigen::VectorXf v1(2);
+		VectorXf v1(2);
 		v1 << 5, 12;
 
-		Eigen::VectorXf v2(2);
+		VectorXf v2(2);
 		v2 << 0, 1;
 
-		Eigen::VectorXf u1 = v1;
+		VectorXf u1 = v1;
 
 		float v2u1 = v2.dot(u1);
 		float u1u1 = u1.dot(u1);
 
-		Eigen::VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
+		VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
 		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
 		std::cout << v2u1 << "/" << u1u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
 		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;

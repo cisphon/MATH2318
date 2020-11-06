@@ -4,12 +4,12 @@
 
 namespace MATH2318::HW2 {
     void question2() {
-        Eigen::MatrixXf A(3, 2);
+        MatrixXf A(3, 2);
         A << 2, -1,
              4, 6,
             -5, 3;
 
-        Eigen::MatrixXf B(3, 2);
+        MatrixXf B(3, 2);
         B << 1, 4,
             -1, 5,
             1, 10;
@@ -31,7 +31,7 @@ namespace MATH2318::HW2 {
     }
 
     void question3() {
-        Eigen::MatrixXf A(2, 3);
+        MatrixXf A(2, 3);
         A << 3, 0, 0,
             -4, -1, 6;
 
@@ -40,15 +40,15 @@ namespace MATH2318::HW2 {
     }
 
     void question4() {
-        Eigen::MatrixXf A(2, 3);
+        MatrixXf A(2, 3);
         A << 4, 2, 2,
             -5, 3, 1;
 
-        Eigen::MatrixXf B(2, 3);
+        MatrixXf B(2, 3);
         B << 1, 2, -7,
             0, -5, 1;
 
-        Eigen::MatrixXf C = 2 * A - 3 * B;
+        MatrixXf C = 2 * A - 3 * B;
 
         // c13
         int row = 1, col = 3;
@@ -64,11 +64,11 @@ namespace MATH2318::HW2 {
     }
 
     void question6() {
-        Eigen::MatrixXf A(2, 2);
+        MatrixXf A(2, 2);
         A << 2, 1,
             5, 1;
 
-        Eigen::MatrixXf B(2, 2);
+        MatrixXf B(2, 2);
         B << 1, -2,
             -2, 6;
 
@@ -80,12 +80,12 @@ namespace MATH2318::HW2 {
     }
 
     void question7() {
-        Eigen::MatrixXf A(3, 3);
+        MatrixXf A(3, 3);
         A << 2, 5, 3,
             -1, 2, 1,
             3, 2, -2;
 
-        Eigen::MatrixXf B(3, 3);
+        MatrixXf B(3, 3);
         B << 3, 2, 0,
             -2, -4, 1,
             -1, 1, -4;
@@ -98,13 +98,13 @@ namespace MATH2318::HW2 {
     }
 
     void question8() {
-        Eigen::MatrixXf A(4, 1);
+        MatrixXf A(4, 1);
         A << -1,
             1,
             2,
             -2;
 
-        Eigen::MatrixXf B(1, 4);
+        MatrixXf B(1, 4);
         B << 3, 1, 2, 2;
 
         // (a) AB
@@ -115,26 +115,26 @@ namespace MATH2318::HW2 {
     }
 
     void question10() {
-        Eigen::MatrixXf A(2, 3);
+        MatrixXf A(2, 3);
         A << 4, -1, -1,
             1, -4, 4;
 
-        Eigen::VectorXf V(2);
+        VectorXf V(2);
         V << 0, 0;
 
         std::cout << A.colPivHouseholderQr().solve(V) << std::endl;
     }
 
     void question14() {
-        Eigen::MatrixXf A(2, 2);
+        MatrixXf A(2, 2);
         A << 6, 8,
             -1, 0;
 
-        Eigen::MatrixXf B(2, 2);
+        MatrixXf B(2, 2);
         B << 0, 4,
             -4, -2;
 
-        Eigen::MatrixXf C(2, 2);
+        MatrixXf C(2, 2);
         C << -11, -7,
             3, -2;
 
@@ -144,11 +144,11 @@ namespace MATH2318::HW2 {
     void question15() {
         int a = 4, b = -3;
 
-        Eigen::MatrixXf A(2, 2);
+        MatrixXf A(2, 2);
         A << 2, 4,
             3, 1;
 
-        Eigen::MatrixXf B(2, 2);
+        MatrixXf B(2, 2);
         B << 2, -1,
             1, 0;
 
@@ -158,11 +158,11 @@ namespace MATH2318::HW2 {
     void question16() {
         int a = 3, b = -4;
 
-        Eigen::MatrixXf A(2, 2);
+        MatrixXf A(2, 2);
         A << 1, 2,
             3, 4;
 
-        Eigen::MatrixXf B(2, 2);
+        MatrixXf B(2, 2);
         B << 0, -1,
             2, 1;
 
@@ -170,12 +170,12 @@ namespace MATH2318::HW2 {
     }
 
     void question17() {
-        Eigen::MatrixXf A(3, 2);
+        MatrixXf A(3, 2);
         A << -4, 0,
             2, -5,
             1, -3;
 
-        Eigen::MatrixXf B(3, 2);
+        MatrixXf B(3, 2);
         B << 2, 4,
             1, 4,
             1, -2;
@@ -194,15 +194,15 @@ namespace MATH2318::HW2 {
     }
 
     void question18() {
-        Eigen::MatrixXf A(2, 3);
+        MatrixXf A(2, 3);
         A << 1, 1, 0,
             2, 3, -1;
 
-        Eigen::MatrixXf B(2, 2);
+        MatrixXf B(2, 2);
         B << -1, 1,
             2, 3;
 
-        Eigen::MatrixXf C(2, 2);
+        MatrixXf C(2, 2);
         C << 0, -1,
             1, 0;
 
@@ -210,22 +210,22 @@ namespace MATH2318::HW2 {
     }
 
     void question19() {
-        Eigen::MatrixXf A(2, 2);
+        MatrixXf A(2, 2);
         A << -1, 2,
             0, 1;
 
-        Eigen::MatrixXf I = Eigen::MatrixXf::Identity(A.rows(), A.cols());
+        MatrixXf I = MatrixXf::Identity(A.rows(), A.cols());
 
         std::cout << A * (I + A) << std::endl;
     }
 
     void question20() {
-        Eigen::MatrixXf A(3, 2);
+        MatrixXf A(3, 2);
         A << 2, 0,
             1, 1,
             1, -2;
 
-        Eigen::MatrixXf B(2, 3);
+        MatrixXf B(2, 3);
         B << 3, -1, 2,
             1, 0, 4;
 
@@ -235,18 +235,18 @@ namespace MATH2318::HW2 {
     }
 
     void question21() {
-        Eigen::MatrixXf A(2, 3);
+        MatrixXf A(2, 3);
 
         A << 0, 2, 2,
             4, -1, 1;
 
-        Eigen::MatrixXf B = A.transpose() * A;
+        MatrixXf B = A.transpose() * A;
         std::cout << B << std::endl;
 
         if (Tools::is_symmetric(B))
             std::cout << "Symmetric" << std::endl << "~~~~~~~~~" << std::endl;
 
-        Eigen::MatrixXf C = A * A.transpose();
+        MatrixXf C = A * A.transpose();
 
         std::cout << C << std::endl;
         if (Tools::is_symmetric(C))
@@ -254,7 +254,7 @@ namespace MATH2318::HW2 {
     }
 
     void question22() {
-        Eigen::MatrixXf A(3, 3);
+        MatrixXf A(3, 3);
         A << 1, 0, 0,
             0, 1, 0,
             0, 0, -1;
@@ -263,13 +263,13 @@ namespace MATH2318::HW2 {
     }
 
     void question23() {
-        Eigen::MatrixXf B(2, 2);
+        MatrixXf B(2, 2);
 
         int n = 2;
     }
 
     void question24() {
-        Eigen::MatrixXf A(2, 2);
+        MatrixXf A(2, 2);
 
         A << 3, 2,
             2, -2;
@@ -283,7 +283,7 @@ namespace MATH2318::HW2 {
     }
 
     void question25() {
-        Eigen::MatrixXf A(3, 3);
+        MatrixXf A(3, 3);
 
         A << 0, 2, 1,
             2, 0, 3,

@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include "Tools.h"
@@ -5,13 +6,13 @@
 
 namespace MATH2318::HW10 {
 	void question1() {
-		Eigen::VectorXf s1(4);
+		VectorXf s1(4);
 		s1 << 1, 1, 1, 1;
 
-		Eigen::VectorXf s2one(4);
+		VectorXf s2one(4);
 		s2one << 1, 1, -1, -1;
 
-		Eigen::VectorXf s2two(4);
+		VectorXf s2two(4);
 		s2two << 0, 0, 5, -5;
 
 		if (Tools::is_orthogonal(s1, s2one) && Tools::is_orthogonal(s1, s2two))
@@ -23,7 +24,7 @@ namespace MATH2318::HW10 {
 	// second problem on this \/
 	// https://www.chegg.com/homework-help/questions-and-answers/find-bases-four-fundamental-subspaces-matrix-basis-n-n-basis-r-r--q1227712
 	void question2() {
-		Eigen::MatrixXf A(2, 3);
+		MatrixXf A(2, 3);
 		A << 1, 7, 1,
 			0, 8, 0;
 
@@ -32,7 +33,7 @@ namespace MATH2318::HW10 {
 
 	// http://www.math.odu.edu/~bogacki/cgi-bin/lat.cgi
 	void question3() {
-		Eigen::MatrixXf A(4, 4);
+		MatrixXf A(4, 4);
 		A << 1, 0, 0, 2,
 			0, 1, 1, 2,
 			1, 1, 1, 4,
@@ -44,12 +45,12 @@ namespace MATH2318::HW10 {
 	// https://www.slader.com/discussion/question/find-a-least-squares-solution-of-3/
 	// https://www.wolframalpha.com/input/?i=system+of+equations
 	void question4() {
-		Eigen::MatrixXf A(3, 2);
+		MatrixXf A(3, 2);
 		A << 1, 2,
 			 1, 1,
 			 2, 1;
 
-		Eigen::MatrixXf b(3, 1);
+		MatrixXf b(3, 1);
 		b << 0,
 			-3,
 			2;
@@ -61,11 +62,11 @@ namespace MATH2318::HW10 {
 	//  x1 y1    x2 y2    x3 y3
 	// (-1, 1), (1, -2), (3, -3)
 	void question5() {
-		Eigen::VectorXf x(3);
+		VectorXf x(3);
 		x << -1, 1, 3;
 		//x << -1, 1, 3;
 
-		Eigen::VectorXf y(3);
+		VectorXf y(3);
 		y << 1, -2, -3;
 		//y << 0, -1, -3;
 
