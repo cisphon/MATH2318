@@ -27,6 +27,6 @@
 
 #if USING_MAIN
 int main() {
-	MATH2318::QUIZ8::question1();
+	MATH2318::QUIZ8::question9();
 }	
 #endif
