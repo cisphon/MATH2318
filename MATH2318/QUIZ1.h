@@ -13,15 +13,15 @@ namespace MATH2318::QUIZ1 {
         VectorXf v(m.rows());
         v << 0, 5, 0;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 
     void question2() {
         for (int x = -3; x <= 5; ++x)
-            std::cout << "(" << x << ", " << -5 * x - 3 << ") ";
-        std::cout << std::endl << "~~~~~~~~~~~~" << std::endl;
+            cout << "(" << x << ", " << -5 * x - 3 << ") ";
+        cout << endl << "~~~~~~~~~~~~" << endl;
         for (int x = -3; x <= 5; ++x)
-            std::cout << "(" << x << ", " << 1 / 2.0 - 5 * x << ") ";
+            cout << "(" << x << ", " << 1 / 2.0 - 5 * x << ") ";
     }
 
     void question3() {
@@ -33,7 +33,7 @@ namespace MATH2318::QUIZ1 {
         VectorXf v(m.rows());
         v << 13, 13;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 
     void question8() {
@@ -48,7 +48,7 @@ namespace MATH2318::QUIZ1 {
         VectorXf v(m.rows());
         v << 9, 20, -5, 16, 19;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 
 }

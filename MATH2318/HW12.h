@@ -5,7 +5,7 @@ namespace MATH2318::HW12 {
 		MatrixXf A(1, 1);
 		A << 10;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question2() {
@@ -13,7 +13,7 @@ namespace MATH2318::HW12 {
 		A << 2, 1,
 			4, 5;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question3() {
@@ -21,7 +21,7 @@ namespace MATH2318::HW12 {
 		A << -3, 6,
 		1 / 2.0f, 7;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-minors-cofactors-matrix-3-1-2-6-5-4-1-2-3-find-minors-matrixm11-m12-m13-m21-m22-m23-m-q15038779
@@ -32,9 +32,9 @@ namespace MATH2318::HW12 {
 			2, -1, 3;
 
 		/*
-		std::vector<float> M11 = Tools::minor_of_matrix(A, 1, 1);
+		vector<float> M11 = Tools::minor_of_matrix(A, 1, 1);
 		for (int i = 0; i < M11.size(); ++i)
-			std::cout << M11[i] << std::endl; 
+			cout << M11[i] << endl; 
 		*/
 
 		MatrixXf M11(2, 2);
@@ -73,25 +73,25 @@ namespace MATH2318::HW12 {
 		M33 << -3, 2,
 			5, 6;
 
-		std::cout << M11.determinant() << std::endl;
-		std::cout << M12.determinant() << std::endl;
-		std::cout << M13.determinant() << std::endl;
-		std::cout << M21.determinant() << std::endl;
-		std::cout << M22.determinant() << std::endl;
-		std::cout << M23.determinant() << std::endl;
-		std::cout << M31.determinant() << std::endl;
-		std::cout << M32.determinant() << std::endl;
-		std::cout << M33.determinant() << std::endl;
+		cout << M11.determinant() << endl;
+		cout << M12.determinant() << endl;
+		cout << M13.determinant() << endl;
+		cout << M21.determinant() << endl;
+		cout << M22.determinant() << endl;
+		cout << M23.determinant() << endl;
+		cout << M31.determinant() << endl;
+		cout << M32.determinant() << endl;
+		cout << M33.determinant() << endl;
 
-		std::cout << pow(-1, 1 + 1) * M11.determinant() << std::endl;
-		std::cout << pow(-1, 1 + 2) * M12.determinant() << std::endl;
-		std::cout << pow(-1, 1 + 3) * M13.determinant() << std::endl;
-		std::cout << pow(-1, 2 + 1) * M21.determinant() << std::endl;
-		std::cout << pow(-1, 2 + 2) * M22.determinant() << std::endl;
-		std::cout << pow(-1, 2 + 3) * M23.determinant() << std::endl;
-		std::cout << pow(-1, 3 + 1) * M31.determinant() << std::endl;
-		std::cout << pow(-1, 3 + 2) * M32.determinant() << std::endl;
-		std::cout << pow(-1, 3 + 3) * M33.determinant() << std::endl;
+		cout << pow(-1, 1 + 1) * M11.determinant() << endl;
+		cout << pow(-1, 1 + 2) * M12.determinant() << endl;
+		cout << pow(-1, 1 + 3) * M13.determinant() << endl;
+		cout << pow(-1, 2 + 1) * M21.determinant() << endl;
+		cout << pow(-1, 2 + 2) * M22.determinant() << endl;
+		cout << pow(-1, 2 + 3) * M23.determinant() << endl;
+		cout << pow(-1, 3 + 1) * M31.determinant() << endl;
+		cout << pow(-1, 3 + 2) * M32.determinant() << endl;
+		cout << pow(-1, 3 + 3) * M33.determinant() << endl;
 	}
 
 	void question6() {
@@ -100,7 +100,7 @@ namespace MATH2318::HW12 {
 			2, 1, 3,
 			-4, 2, 3;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question7() {
@@ -109,7 +109,7 @@ namespace MATH2318::HW12 {
 			9, 5, 0,
 			-3, 6, -2;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question8() {
@@ -122,9 +122,9 @@ namespace MATH2318::HW12 {
 			A(0) = x - 10;
 			A(3) = x - 1;
 			if (A.determinant() == 0)
-				std::cout << x << ' ';
+				cout << x << ' ';
 		}
-		std::cout << std::endl;
+		cout << endl;
 	}
 
 	void question9() {
@@ -140,10 +140,10 @@ namespace MATH2318::HW12 {
 			A(8) = x;
 
 			if (A.determinant() == 0)
-				std::cout << x << ' ';
+				cout << x << ' ';
 		}
 
-		std::cout << std::endl;
+		cout << endl;
 	}
 
 	// AB - CD
@@ -156,12 +156,12 @@ namespace MATH2318::HW12 {
 		B << 1, 1,
 			0, -1;
 
-		std::cout << A.determinant() << std::endl;
-		std::cout << B.determinant() << std::endl;
+		cout << A.determinant() << endl;
+		cout << B.determinant() << endl;
 
-		std::cout << A * B << std::endl;
+		cout << A * B << endl;
 
-		std::cout << (A * B).determinant() << std::endl;
+		cout << (A * B).determinant() << endl;
 	}
 
 	void question11() {
@@ -175,14 +175,14 @@ namespace MATH2318::HW12 {
 			0, 3, 0,
 			0, 0, 5;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 
-		std::cout << B.determinant() << std::endl;
+		cout << B.determinant() << endl;
 
-		std::cout << A * B << std::endl;
+		cout << A * B << endl;
 
-		std::cout << A.determinant() * B.determinant() << std::endl;
-		std::cout << (A * B).determinant() << std::endl;
+		cout << A.determinant() * B.determinant() << endl;
+		cout << (A * B).determinant() << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/use-fact-ca-c-n-evaluate-determinant-n-x-n-matrix-25-20-10-5-factor-greatest-common-diviso-q9848847
@@ -193,13 +193,13 @@ namespace MATH2318::HW12 {
 
 		int a[] = { 8, 12, 16, -4};
 		float gcd = static_cast<float>(Tools::findGCD(a, sizeof(a) / sizeof(a[0])));
-		std::cout << gcd << std::endl;
+		cout << gcd << endl;
 
 		MatrixXf step1 = A / gcd;
-		std::cout << step1 << std::endl;
+		cout << step1 << endl;
 
-		std::cout << step1.determinant() << std::endl;
-		std::cout << A.determinant() << std::endl;
+		cout << step1.determinant() << endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question13() {
@@ -208,9 +208,9 @@ namespace MATH2318::HW12 {
 			12, 8;
 
 		if (Tools::is_singular(A))
-			std::cout << "Singular" << std::endl;
+			cout << "Singular" << endl;
 		else
-			std::cout << "Nonsingular" << std::endl;
+			cout << "Nonsingular" << endl;
 	}
 
 	void question14() {
@@ -220,9 +220,9 @@ namespace MATH2318::HW12 {
 			1, 1, 1;
 
 		if (Tools::is_singular(A))
-			std::cout << "Singular" << std::endl;
+			cout << "Singular" << endl;
 		else
-			std::cout << "Nonsingular" << std::endl;
+			cout << "Nonsingular" << endl;
 	}
 
 	void question15() {
@@ -230,7 +230,7 @@ namespace MATH2318::HW12 {
 		A << 2, 7,
 			4, 6;
 
-		std::cout << A.inverse().determinant() << std::endl;
+		cout << A.inverse().determinant() << endl;
 	}
 
 	void question16() {
@@ -240,7 +240,7 @@ namespace MATH2318::HW12 {
 			2, -3, 3;
 
 		if (A.determinant() == 0)
-			std::cout << "The system does not have a unique solution because the determinant of the coefficient matrix is zero." << std::endl;
+			cout << "The system does not have a unique solution because the determinant of the coefficient matrix is zero." << endl;
 	}
 
 	void question17() {
@@ -248,10 +248,10 @@ namespace MATH2318::HW12 {
 		A << 6, -8,
 			5, 4;
 	
-		std::cout << A.transpose().determinant() << std::endl;
-		std::cout << (A*A).determinant() << std::endl;
-		std::cout << (A * A.transpose()).determinant() << std::endl;
-		std::cout << (2 * A).determinant() << std::endl;
-		std::cout << (A.inverse()).determinant() << std::endl;
+		cout << A.transpose().determinant() << endl;
+		cout << (A*A).determinant() << endl;
+		cout << (A * A.transpose()).determinant() << endl;
+		cout << (2 * A).determinant() << endl;
+		cout << (A.inverse()).determinant() << endl;
 	}
 }

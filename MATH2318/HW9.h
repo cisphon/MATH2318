@@ -10,8 +10,8 @@ namespace MATH2318::HW9 {
 		VectorXf b(2);
 		b << 4, -2;
 
-		std::cout << Tools::is_orthogonal(a, b) << std::endl;
-		// std::cout << Tools::is_orthonormal(a, b) << std::endl;
+		cout << Tools::is_orthogonal(a, b) << endl;
+		// cout << Tools::is_orthonormal(a, b) << endl;
 		
 		// check if linearly independent.
 	}
@@ -26,7 +26,7 @@ namespace MATH2318::HW9 {
 		VectorXf c(3);
 		c << 0, 4, -1;
 
-		std::cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << std::endl;
+		cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << endl;
 
 
 	}
@@ -41,7 +41,7 @@ namespace MATH2318::HW9 {
 		VectorXf c(3);
 		c << sqrt(2) / 2.0, sqrt(2) / 2.0, sqrt(2) / 2.0;
 
-		std::cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << std::endl;
+		cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << endl;
 
 	}
 
@@ -52,7 +52,7 @@ namespace MATH2318::HW9 {
 		VectorXf b(4);
 		b << 2, 6, 0, 0;
 
-		std::cout << Tools::is_orthogonal(a, b) << std::endl;
+		cout << Tools::is_orthogonal(a, b) << endl;
 	}
 
     // https://www.chegg.com/homework-help/questions-and-answers/consider-following-show-set-vectors-r-orthogonal-b-normalize-set-produce-orthonormal-set-q25068669
@@ -63,7 +63,7 @@ namespace MATH2318::HW9 {
 		VectorXf b(3);
 		b << -sqrt(3), 0, sqrt(3);
 
-		std::cout << a.dot(b) << std::endl;
+		cout << a.dot(b) << endl;
 
 		// b 
 		// 1 / sqrt(a(0)^2 + a(1)^2 + a(2)^2)
@@ -80,31 +80,31 @@ namespace MATH2318::HW9 {
 
 		VectorXf w1 = v1;
 
-		//std::cout << w1.squaredNorm() << std::endl;
+		//cout << w1.squaredNorm() << endl;
 
 		VectorXf w2 = v2 - (v2.dot(w1)) / (w1.dot(w1)) * w1;
 
-		//std::cout << v2.dot(w1) << "/" << w1.dot(w1) << std::endl;
+		//cout << v2.dot(w1) << "/" << w1.dot(w1) << endl;
 
-		//std::cout << w2 << std::endl;
+		//cout << w2 << endl;
 
-		//std::cout << v2.dot(w1) << std::endl;
-		//std::cout << w1.dot(w1) << std::endl;
+		//cout << v2.dot(w1) << endl;
+		//cout << w1.dot(w1) << endl;
 
-		//std::cout << w1 << std::endl;
-		//std::cout << w2 << std::endl;
+		//cout << w1 << endl;
+		//cout << w2 << endl;
 
-		std::cout << v1.norm() << std::endl;
-		std::cout << "1/" << "sqrt(" << v1(0)*v1(0) << " + " << v1(1)*v1(1) << ");" << std::endl;
+		cout << v1.norm() << endl;
+		cout << "1/" << "sqrt(" << v1(0)*v1(0) << " + " << v1(1)*v1(1) << ");" << endl;
 
-		std::cout << w2.norm() << std::endl;
-		std::cout << "1/" << "sqrt(" << w2(0)*w2(0) << " + " << w2(1)*w2(1) << ");" << std::endl;
+		cout << w2.norm() << endl;
+		cout << "1/" << "sqrt(" << w2(0)*w2(0) << " + " << w2(1)*w2(1) << ");" << endl;
 
 		VectorXf u1 = w1 / w1.norm();
 		VectorXf u2 = w2 / w2.norm();
 
-		//std::cout << u1 << std::endl;
-		//std::cout << u2 << std::endl;
+		//cout << u1 << endl;
+		//cout << u2 << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/apply-gram-schmidt-orthonormalization-process-transform-given-basis-rn-orthonormal-basis-u-q16919411
@@ -131,13 +131,13 @@ namespace MATH2318::HW9 {
 
 		/*
 
-		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v2u1 << "/" << u1u1 << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		cout << v2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v2u1 << "/" << u1u1 << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
 
 		*/
 
-		std::cout << u2 << "/" << u2.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
+		cout << u2 << "/" << u2.norm() << endl << "~~~~~~~~~~~" << endl;
 
 		float v3u1 = v3.dot(u1);
 		u1u1 = u1.dot(u1);
@@ -147,14 +147,14 @@ namespace MATH2318::HW9 {
 
 		VectorXf u3 = v3 - (v3u1 / u1u1) * u1 - (v3u2 / u2u2) * u2;
 
-		//std::cout << u3 << std::endl;
+		//cout << u3 << endl;
 		/*
-		std::cout << u1 << std::endl; /// u1.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
-		std::cout << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+		cout << u1 << endl; /// u1.norm() << endl << "~~~~~~~~~~~" << endl;
+		cout << "sqrt(" << u1.squaredNorm() << ");" << endl;
 
 
-		std::cout << u2 << std::endl; /// u2.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
-		std::cout << u3 << std::endl; /// u3.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
+		cout << u2 << endl; /// u2.norm() << endl << "~~~~~~~~~~~" << endl;
+		cout << u3 << endl; /// u3.norm() << endl << "~~~~~~~~~~~" << endl;
 		*/
 	}
 
@@ -176,15 +176,15 @@ namespace MATH2318::HW9 {
 
 		VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
 
-		//std::cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+		//cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << endl;
 
 		/*
-		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v2u1 << "/" << u1u1 << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		cout << v2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v2u1 << "/" << u1u1 << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
 		*/
 
-		//std::cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+		//cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << endl << "~~~~~~~~~~~" << endl;
 
 		float v3u1 = v3.dot(u1);
 		u1u1 = u1.dot(u1);
@@ -195,15 +195,15 @@ namespace MATH2318::HW9 {
 		VectorXf u3 = v3 - (v3u1 / u1u1) * u1 - (v3u2 / u2u2) * u2;
 
 
-		std::cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+		cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << endl << "~~~~~~~~~~~" << endl;
 
 		/*
-		std::cout << u1 << std::endl; /// u1.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
-		std::cout << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+		cout << u1 << endl; /// u1.norm() << endl << "~~~~~~~~~~~" << endl;
+		cout << "sqrt(" << u1.squaredNorm() << ");" << endl;
 
 
-		std::cout << u2 << std::endl; /// u2.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
-		std::cout << u3 << std::endl; /// u3.norm() << std::endl << "~~~~~~~~~~~" << std::endl;
+		cout << u2 << endl; /// u2.norm() << endl << "~~~~~~~~~~~" << endl;
+		cout << u3 << endl; /// u3.norm() << endl << "~~~~~~~~~~~" << endl;
 		*/
 	}
 }

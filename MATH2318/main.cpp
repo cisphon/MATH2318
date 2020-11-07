@@ -9,6 +9,7 @@
 #include "HW10.h"
 #include "HW11.h"
 #include "HW12.h"
+#include "HW13.h"
 
 #include "TEST1.h"
 #include "TEST2.h"
@@ -27,6 +28,6 @@
 
 #if USING_MAIN
 int main() {
-	MATH2318::QUIZ8::question9();
+	MATH2318::HW13::question2();
 }	
 #endif

@@ -10,9 +10,9 @@ namespace MATH2318::QUIZ5 {
 		VectorXf v(4);
 		v << 1, 3, 0, 1;
 
-		std::cout << "sqrt(" << u.squaredNorm() << ")" << std::endl;
-		std::cout << "sqrt(" << v.squaredNorm() << ")" << std::endl;
-		std::cout << (u + v).norm() << std::endl;
+		cout << "sqrt(" << u.squaredNorm() << ")" << endl;
+		cout << "sqrt(" << v.squaredNorm() << ")" << endl;
+		cout << (u + v).norm() << endl;
 	}
 
 	void question4() {
@@ -36,7 +36,7 @@ namespace MATH2318::QUIZ5 {
 		VectorXf v(2);
 		v << 4, 1;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	void question10() {

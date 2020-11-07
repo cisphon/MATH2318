@@ -12,7 +12,7 @@ namespace MATH2318::QUIZ2 {
         B << 4, -3,
             -1, 8;
 
-        std::cout << 2 * A << std::endl;
+        cout << 2 * A << endl;
     }
 
     void question2() {
@@ -27,10 +27,10 @@ namespace MATH2318::QUIZ2 {
             8, -1, 7;
 
         // (a) AB
-        //std::cout << A * B << std::endl;
+        //cout << A * B << endl;
 
         // (b) BA
-        std::cout << B * A << std::endl;
+        cout << B * A << endl;
     }
 
     void question4() {
@@ -42,7 +42,7 @@ namespace MATH2318::QUIZ2 {
         VectorXf A_V(A_M.rows());
         A_V << -15, -2, -11;
 
-        std::cout << A_M.colPivHouseholderQr().solve(A_V) << std::endl;
+        cout << A_M.colPivHouseholderQr().solve(A_V) << endl;
     }
 
     void question5() {
@@ -50,9 +50,9 @@ namespace MATH2318::QUIZ2 {
         A << 0, 3,
             -3, 0;
 
-        std::cout << Tools::is_symmetric(A) << std::endl;
+        cout << Tools::is_symmetric(A) << endl;
 
-        std::cout << Tools::is_skew_symmetric(A) << std::endl;
+        cout << Tools::is_skew_symmetric(A) << endl;
     }
 
     void question6() {
@@ -64,7 +64,7 @@ namespace MATH2318::QUIZ2 {
         B << 0, 1, 3,
             -2, 2, -6;
 
-        std::cout << 4 * (A - B) << std::endl;
+        cout << 4 * (A - B) << endl;
     }
 
     void question7() {
@@ -74,7 +74,7 @@ namespace MATH2318::QUIZ2 {
 
         MatrixXf I = MatrixXf::Identity(A.rows(), A.cols());
 
-        std::cout << A + I * A << std::endl;
+        cout << A + I * A << endl;
     }
 
     void question8() {
@@ -84,14 +84,14 @@ namespace MATH2318::QUIZ2 {
 
         MatrixXf a = A.transpose() * A;
         // A^T * A
-        std::cout << a << std::endl << "~~~~~~~~~~~" << std::endl;
+        cout << a << endl << "~~~~~~~~~~~" << endl;
 
         MatrixXf b = A * A.transpose();
         // A * A^T
-        std::cout << b << std::endl;
+        cout << b << endl;
 
-        std::cout << Tools::is_symmetric(a) << std::endl;
-        std::cout << Tools::is_symmetric(b) << std::endl;
+        cout << Tools::is_symmetric(a) << endl;
+        cout << Tools::is_symmetric(b) << endl;
     }
 
     void question9() {
@@ -102,7 +102,7 @@ namespace MATH2318::QUIZ2 {
 
         float n = 19;
 
-        std::cout << Tools::pow_of_matrix(A, n) << std::endl;
+        cout << Tools::pow_of_matrix(A, n) << endl;
     }
 
     void question10() {
@@ -112,6 +112,6 @@ namespace MATH2318::QUIZ2 {
 
         float n = 2;
 
-        std::cout << Tools::pow_of_matrix(B, 1 / n) << std::endl;
+        cout << Tools::pow_of_matrix(B, 1 / n) << endl;
     }
 }

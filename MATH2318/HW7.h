@@ -11,7 +11,7 @@ namespace MATH2318::HW7 {
 		float b = c - 2 * d;
 		float a = 2 * c - 4 * b;
 
-		std::cout << a << " " << b << " " << c << " " << d << std::endl;
+		cout << a << " " << b << " " << c << " " << d << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-basis-dimension-solution-space-homogeneous-system-linear-equations-x-y-z-0-3x-y-0-0-3-q11848773
@@ -33,7 +33,7 @@ namespace MATH2318::HW7 {
 		VectorXf v(4);
 		v << 2, 0, -5, -3;
 
-		std::cout << "sqrt(" << v.squaredNorm() << ")" << std::endl;
+		cout << "sqrt(" << v.squaredNorm() << ")" << endl;
 	}
 
 	void question14() {
@@ -43,9 +43,9 @@ namespace MATH2318::HW7 {
 		VectorXf v(2);
 		v << 3, -1 / 2.0f;
 
-		std::cout << "sqrt(" << u.squaredNorm() << ")" << std::endl;
-		std::cout << "sqrt(" << v.squaredNorm() << ")" << std::endl;
-		std::cout << "sqrt(" << (u + v).squaredNorm() << ")" << std::endl;
+		cout << "sqrt(" << u.squaredNorm() << ")" << endl;
+		cout << "sqrt(" << v.squaredNorm() << ")" << endl;
+		cout << "sqrt(" << (u + v).squaredNorm() << ")" << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-vector-v-given-length-direction-u-v-3-u-1-2-0-1-q8729877
@@ -53,7 +53,7 @@ namespace MATH2318::HW7 {
 		VectorXf u(4);
 		u << 1, -2, 0, -1;
 
-		std::cout << u.squaredNorm() << std::endl;
+		cout << u.squaredNorm() << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/values-c-c-1-4-2-1-c-enter-answers-comma-separated-list-q9152653
@@ -61,7 +61,7 @@ namespace MATH2318::HW7 {
 		VectorXf u(3);
 		u << 1, 4, 2;
 
-		std::cout << 1 << "/" << "sqrt(" << u.squaredNorm() << ")" << std::endl;
+		cout << 1 << "/" << "sqrt(" << u.squaredNorm() << ")" << endl;
 	}
 
 	void question17() {
@@ -71,10 +71,10 @@ namespace MATH2318::HW7 {
 		VectorXf v(2);
 		v << 1, -1;
 
-		std::cout << "sqrt(";
-		std::cout << Tools::distance(u, v) * Tools::distance(u, v); 
-		std::cout << ")";
-		std::cout << std::endl;
+		cout << "sqrt(";
+		cout << Tools::distance(u, v) * Tools::distance(u, v); 
+		cout << ")";
+		cout << endl;
 	}
 
 	void question18() {
@@ -84,17 +84,17 @@ namespace MATH2318::HW7 {
 		VectorXf v(2);
 		v << 3, 2;
 
-		std::cout << u.dot(v) << std::endl;
-		std::cout << v.dot(v) << std::endl;
-		std::cout << u.norm() * u.norm() << std::endl;
+		cout << u.dot(v) << endl;
+		cout << v.dot(v) << endl;
+		cout << u.norm() * u.norm() << endl;
 		
-		std::cout << "~~~~~~~~~~~" << std::endl;
-		std::cout << u.dot(v) * v << std::endl;
-		std::cout << "~~~~~~~~~~~" << std::endl;
+		cout << "~~~~~~~~~~~" << endl;
+		cout << u.dot(v) * v << endl;
+		cout << "~~~~~~~~~~~" << endl;
 
-		std::cout << "~~~~~~~~~~~" << std::endl;
-		std::cout << u.dot(5 * v) << std::endl;
-		std::cout << "~~~~~~~~~~~" << std::endl;
+		cout << "~~~~~~~~~~~" << endl;
+		cout << u.dot(5 * v) << endl;
+		cout << "~~~~~~~~~~~" << endl;
 
 	}
 
@@ -105,7 +105,7 @@ namespace MATH2318::HW7 {
 		VectorXf v(2);
 		v << 2, -4;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	// fuck you
@@ -116,7 +116,7 @@ namespace MATH2318::HW7 {
 		VectorXf v(3);
 		v << -2, 5, 0;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	void question22() {
@@ -157,9 +157,9 @@ namespace MATH2318::HW7 {
 		v << 0, -2;
 
 		if (Tools::holds_triangle_inequality(u, v))
-			std::cout << "Holds inequality" << std::endl;
+			cout << "Holds inequality" << endl;
 		else
-			std::cout << "Doesn't hold inequality" << std::endl;
+			cout << "Doesn't hold inequality" << endl;
 	}
 
 	void question26() {
@@ -170,21 +170,21 @@ namespace MATH2318::HW7 {
 		v << 4, 0, 1;
 
 		if (Tools::is_orthogonal(u, v))
-			std::cout << "Is orthogonal" << std::endl;
+			cout << "Is orthogonal" << endl;
 		else
-			std::cout << "Isn't orthogonal" << std::endl;
+			cout << "Isn't orthogonal" << endl;
 
-		std::cout << u.squaredNorm() << std::endl;
-		std::cout << v.squaredNorm() << std::endl;
+		cout << u.squaredNorm() << endl;
+		cout << v.squaredNorm() << endl;
 
-		std::cout << "~~~~~~~~~" << std::endl;
-		std::cout << u + v << std::endl << "~~~~~~~~~" << std::endl;
-		std::cout << (u + v).squaredNorm() << std::endl;
+		cout << "~~~~~~~~~" << endl;
+		cout << u + v << endl << "~~~~~~~~~" << endl;
+		cout << (u + v).squaredNorm() << endl;
 
 		if ((u + v).squaredNorm() == u.squaredNorm() + v.squaredNorm())
-			std::cout << "Yes" << std::endl;
+			cout << "Yes" << endl;
 		else
-			std::cout << "No" << std::endl;
+			cout << "No" << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/let-v-v1-v2-vector-r2-show-v2-v1-orthogonal-v-use-fact-find-two-unit-vectors-orthogonal-gi-q9152569
@@ -200,20 +200,20 @@ namespace MATH2318::HW7 {
 		va << -vb(0), vb(1);
 
 
-		std::cout << "~~~~~~~~~" << std::endl;
-		std::cout << vb / vb.norm() << std::endl;
-		std::cout << "~~~~~~~~~" << std::endl;
+		cout << "~~~~~~~~~" << endl;
+		cout << vb / vb.norm() << endl;
+		cout << "~~~~~~~~~" << endl;
 
 
-		std::cout << "~~~~~~~~~" << std::endl;
-		std::cout << va / va.norm() << std::endl;
-		std::cout << "~~~~~~~~~" << std::endl;
+		cout << "~~~~~~~~~" << endl;
+		cout << va / va.norm() << endl;
+		cout << "~~~~~~~~~" << endl;
 	}
 
 	void question28() {
 		VectorXf v(5);
 		v << 2, -3, 5, -1, 3;
 
-		std::cout << "sqrt(" << v.squaredNorm() << ")" << std::endl;
+		cout << "sqrt(" << v.squaredNorm() << ")" << endl;
 	} 
 }

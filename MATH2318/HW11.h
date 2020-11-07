@@ -12,7 +12,7 @@ namespace MATH2318::HW11 {
 		VectorXf image(2);
 		image << (v(0) + v(1)), (v(0) - v(1));
 
-		std::cout << image << std::endl;
+		cout << image << endl;
 
 	}
 

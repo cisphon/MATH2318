@@ -11,8 +11,8 @@ namespace  MATH2318::HW3 {
         B << -2, 1,
             -1, 1;
 
-        std::cout << A * B << std::endl;
-        std::cout << B * A << std::endl;
+        cout << A * B << endl;
+        cout << B * A << endl;
     }
 
     void question3() {
@@ -21,7 +21,7 @@ namespace  MATH2318::HW3 {
         A << 1, 2,
             3, 5;
 
-        std::cout << A.inverse() << std::endl;
+        cout << A.inverse() << endl;
     }
 
     void question4() {
@@ -31,7 +31,7 @@ namespace  MATH2318::HW3 {
             1, 1, -1,
             -1, -1, 2;
 
-        std::cout << A.inverse() << std::endl;
+        cout << A.inverse() << endl;
     }
 
     void question5() {
@@ -41,7 +41,7 @@ namespace  MATH2318::HW3 {
             3, -10, 5,
             5, -19, 16;
 
-        std::cout << A.inverse() << std::endl; // DNE
+        cout << A.inverse() << endl; // DNE
     }
 
     void question6() {
@@ -52,7 +52,7 @@ namespace  MATH2318::HW3 {
             0, 0, 0, 0,
             0, 0, 0, -3;
 
-        std::cout << A.inverse() << std::endl; // DNE
+        cout << A.inverse() << endl; // DNE
     }
 
     void question7() {
@@ -89,13 +89,13 @@ namespace  MATH2318::HW3 {
         B = B.inverse();
 
         // (a) (AB)^-1
-        std::cout << (A * B).inverse() << std::endl << "~~~~~~~~" << std::endl;
+        cout << (A * B).inverse() << endl << "~~~~~~~~" << endl;
 
         // (b) (A^T)^-1
-        std::cout << (A.transpose()).inverse() << std::endl << "~~~~~~~~" << std::endl;
+        cout << (A.transpose()).inverse() << endl << "~~~~~~~~" << endl;
 
         // (c) (2A)^-1
-        std::cout << (2 * A).inverse() << std::endl;
+        cout << (2 * A).inverse() << endl;
     }
 
     // doesn't solve system of equations properly.
@@ -111,10 +111,10 @@ namespace  MATH2318::HW3 {
 
 
         // (a) 
-        std::cout << M.colPivHouseholderQr().solve(A_V) << std::endl << "~~~~~~" << std::endl;
+        cout << M.colPivHouseholderQr().solve(A_V) << endl << "~~~~~~" << endl;
 
         // (b) 
-        std::cout << M.colPivHouseholderQr().solve(B_V);
+        cout << M.colPivHouseholderQr().solve(B_V);
     }
 
     // doesn't solve system of equations properly.
@@ -135,10 +135,10 @@ namespace  MATH2318::HW3 {
         A_V << -1, -3, 3;
 
         // (a) 
-        std::cout << A_M.colPivHouseholderQr().solve(A_V) << std::endl << "~~~~~~" << std::endl;
+        cout << A_M.colPivHouseholderQr().solve(A_V) << endl << "~~~~~~" << endl;
 
         // (b) 
-        std::cout << B_M.colPivHouseholderQr().solve(B_V);
+        cout << B_M.colPivHouseholderQr().solve(B_V);
     }
 
     //https://www.slader.com/discussion/question/find-x-such-that-the-matrix-is-singular-a-4-x-2-3/
@@ -147,7 +147,7 @@ namespace  MATH2318::HW3 {
 
         float d = (a * b) / c;
 
-        std::cout << d << std::endl;
+        cout << d << endl;
     }
 
     // https://www.symbolab.com/solver/matrix-inverse-calculator/
@@ -161,7 +161,7 @@ namespace  MATH2318::HW3 {
         A << 0, 1,
             1, 0;
 
-        std::cout << A.inverse() << std::endl;
+        cout << A.inverse() << endl;
     }
 
     void question16() {
@@ -170,7 +170,7 @@ namespace  MATH2318::HW3 {
         A << 5, 0,
             0, 1;
 
-        std::cout << A.inverse() << std::endl;
+        cout << A.inverse() << endl;
     }
 
     void question17() {
@@ -180,6 +180,6 @@ namespace  MATH2318::HW3 {
             0, 0, 1,
             0, 1, 0;
 
-        std::cout << A.inverse() << std::endl;
+        cout << A.inverse() << endl;
     }
 }

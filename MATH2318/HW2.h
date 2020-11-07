@@ -15,19 +15,19 @@ namespace MATH2318::HW2 {
             1, 10;
 
         // (a) A + B
-        std::cout << A + B << std::endl << "~~~~~~~~" << std::endl;
+        cout << A + B << endl << "~~~~~~~~" << endl;
 
         // (b) A - B
-        std::cout << A - B << std::endl << "~~~~~~~~" << std::endl;
+        cout << A - B << endl << "~~~~~~~~" << endl;
 
         // (c) 2A
-        std::cout << 2 * A << std::endl << "~~~~~~~~" << std::endl;
+        cout << 2 * A << endl << "~~~~~~~~" << endl;
 
         // (d) 2A - B
-        std::cout << (2 * A) - B << std::endl << "~~~~~~~~" << std::endl;
+        cout << (2 * A) - B << endl << "~~~~~~~~" << endl;
 
         // (e) B + 1/2A
-        std::cout << B + ((1 / 2.0) * A) << std::endl << "~~~~~~~~" << std::endl;
+        cout << B + ((1 / 2.0) * A) << endl << "~~~~~~~~" << endl;
     }
 
     void question3() {
@@ -36,7 +36,7 @@ namespace MATH2318::HW2 {
             -4, -1, 6;
 
         // (c) 2A
-        std::cout << 2 * A << std::endl;
+        cout << 2 * A << endl;
     }
 
     void question4() {
@@ -52,11 +52,11 @@ namespace MATH2318::HW2 {
 
         // c13
         int row = 1, col = 3;
-        std::cout << C(row - 1, col - 1) << std::endl;
+        cout << C(row - 1, col - 1) << endl;
 
         // c21
         row = 2, col = 1;
-        std::cout << C(row - 1, col - 1) << std::endl;
+        cout << C(row - 1, col - 1) << endl;
     }
 
     void question5() {
@@ -73,10 +73,10 @@ namespace MATH2318::HW2 {
             -2, 6;
 
         // (a) AB
-        std::cout << A * B << std::endl << "~~~~~~~~" << std::endl;
+        cout << A * B << endl << "~~~~~~~~" << endl;
 
         // (b) BA
-        std::cout << B * A << std::endl;
+        cout << B * A << endl;
     }
 
     void question7() {
@@ -91,10 +91,10 @@ namespace MATH2318::HW2 {
             -1, 1, -4;
 
         // (a) AB
-        std::cout << A * B << std::endl << "~~~~~~~" << std::endl;
+        cout << A * B << endl << "~~~~~~~" << endl;
 
         // (b) BA
-        std::cout << B * A << std::endl;
+        cout << B * A << endl;
     }
 
     void question8() {
@@ -108,10 +108,10 @@ namespace MATH2318::HW2 {
         B << 3, 1, 2, 2;
 
         // (a) AB
-        std::cout << A * B << std::endl << "~~~~~~~" << std::endl;
+        cout << A * B << endl << "~~~~~~~" << endl;
 
         // (b) BA
-        std::cout << B * A << std::endl;
+        cout << B * A << endl;
     }
 
     void question10() {
@@ -122,7 +122,7 @@ namespace MATH2318::HW2 {
         VectorXf V(2);
         V << 0, 0;
 
-        std::cout << A.colPivHouseholderQr().solve(V) << std::endl;
+        cout << A.colPivHouseholderQr().solve(V) << endl;
     }
 
     void question14() {
@@ -138,7 +138,7 @@ namespace MATH2318::HW2 {
         C << -11, -7,
             3, -2;
 
-        std::cout << A + B + C << std::endl;
+        cout << A + B + C << endl;
     }
 
     void question15() {
@@ -152,7 +152,7 @@ namespace MATH2318::HW2 {
         B << 2, -1,
             1, 0;
 
-        std::cout << a * A + b * B << std::endl;
+        cout << a * A + b * B << endl;
     }
 
     void question16() {
@@ -166,7 +166,7 @@ namespace MATH2318::HW2 {
         B << 0, -1,
             2, 1;
 
-        std::cout << (a - b) * (A - B) << std::endl;
+        cout << (a - b) * (A - B) << endl;
     }
 
     void question17() {
@@ -181,16 +181,16 @@ namespace MATH2318::HW2 {
             1, -2;
 
         // (a) 3X + 2A = B -> (B - 2A) / 3 = X
-        std::cout << (B - 2 * A) / 3.0 << std::endl << "~~~~~~~~~" << std::endl;
+        cout << (B - 2 * A) / 3.0 << endl << "~~~~~~~~~" << endl;
 
         // (b) 2A - 5B = 3X -> (2A - 5B) / 3 = X
-        std::cout << (2 * A - 5 * B) / 3.0 << std::endl << "~~~~~~~~~" << std::endl;
+        cout << (2 * A - 5 * B) / 3.0 << endl << "~~~~~~~~~" << endl;
 
         // (c) X - 3A + 2B = 0 -> X = 3A - 2B 
-        std::cout << 3 * A - 2 * B << std::endl << "~~~~~~~~~" << std::endl;
+        cout << 3 * A - 2 * B << endl << "~~~~~~~~~" << endl;
 
         // (d) 6X - 4A - 3B = 0 -> X = (4A + 3B) / 6.0
-        std::cout << (4 * A + 3 * B) / 6.0 << std::endl;
+        cout << (4 * A + 3 * B) / 6.0 << endl;
     }
 
     void question18() {
@@ -206,7 +206,7 @@ namespace MATH2318::HW2 {
         C << 0, -1,
             1, 0;
 
-        std::cout << B * (C * A) << std::endl;
+        cout << B * (C * A) << endl;
     }
 
     void question19() {
@@ -216,7 +216,7 @@ namespace MATH2318::HW2 {
 
         MatrixXf I = MatrixXf::Identity(A.rows(), A.cols());
 
-        std::cout << A * (I + A) << std::endl;
+        cout << A * (I + A) << endl;
     }
 
     void question20() {
@@ -229,9 +229,9 @@ namespace MATH2318::HW2 {
         B << 3, -1, 2,
             1, 0, 4;
 
-        std::cout << (A * B).transpose() << std::endl << "~~~~~~~~" << std::endl;
+        cout << (A * B).transpose() << endl << "~~~~~~~~" << endl;
 
-        std::cout << B.transpose() * A.transpose() << std::endl;
+        cout << B.transpose() * A.transpose() << endl;
     }
 
     void question21() {
@@ -241,16 +241,16 @@ namespace MATH2318::HW2 {
             4, -1, 1;
 
         MatrixXf B = A.transpose() * A;
-        std::cout << B << std::endl;
+        cout << B << endl;
 
         if (Tools::is_symmetric(B))
-            std::cout << "Symmetric" << std::endl << "~~~~~~~~~" << std::endl;
+            cout << "Symmetric" << endl << "~~~~~~~~~" << endl;
 
         MatrixXf C = A * A.transpose();
 
-        std::cout << C << std::endl;
+        cout << C << endl;
         if (Tools::is_symmetric(C))
-            std::cout << "Symmetric" << std::endl << "~~~~~~~~~" << std::endl;
+            cout << "Symmetric" << endl << "~~~~~~~~~" << endl;
     }
 
     void question22() {
@@ -259,7 +259,7 @@ namespace MATH2318::HW2 {
             0, 1, 0,
             0, 0, -1;
 
-        std::cout << A * A * A * A * A * A * A * A * A * A * A << std::endl;
+        cout << A * A * A * A * A * A * A * A * A * A * A << endl;
     }
 
     void question23() {
@@ -275,11 +275,11 @@ namespace MATH2318::HW2 {
             2, -2;
 
         if (Tools::is_symmetric(A))
-            std::cout << "Symmetric" << std::endl;
+            cout << "Symmetric" << endl;
         else if (Tools::is_skew_symmetric(A))
-            std::cout << "Skew-symmetric" << std::endl;
+            cout << "Skew-symmetric" << endl;
         else
-            std::cout << "Neither" << std::endl;
+            cout << "Neither" << endl;
     }
 
     void question25() {
@@ -290,10 +290,10 @@ namespace MATH2318::HW2 {
             1, 3, 0;
 
         if (Tools::is_symmetric(A))
-            std::cout << "Symmetric" << std::endl;
+            cout << "Symmetric" << endl;
         else if (Tools::is_skew_symmetric(A))
-            std::cout << "Skew-symmetric" << std::endl;
+            cout << "Skew-symmetric" << endl;
         else
-            std::cout << "Neither" << std::endl;
+            cout << "Neither" << endl;
     }
 }

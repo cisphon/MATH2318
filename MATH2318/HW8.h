@@ -10,10 +10,10 @@ namespace MATH2318::HW8 {
 		VectorXf v(2);
 		v << -8, -15;
 
-		std::cout << u.dot(v) << std::endl;
-		std::cout << "sqrt(" << u.squaredNorm() << ");" << std::endl;
-		std::cout << "sqrt(" << v.squaredNorm() << ");" << std::endl;
-		std::cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << std::endl;
+		cout << u.dot(v) << endl;
+		cout << "sqrt(" << u.squaredNorm() << ");" << endl;
+		cout << "sqrt(" << v.squaredNorm() << ");" << endl;
+		cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-u-v-llull-11v11-d-u-v-given-inner-product-defined-rn-u-v-3u1v1-u2v2-u-4-0-u-v-v-5-2-c-q25787715
@@ -26,15 +26,15 @@ namespace MATH2318::HW8 {
 
 		// (u1 * v1) + 3(u2 * v2) + (u3 * v3)
 
-		std::cout << u(0) * v(0) + 3 * u(1) * v(1) + u(2) * v(2) << std::endl;
-		std::cout << "sqrt(" << u(0) * u(0) + 3 * u(1) * u(1) + u(2) * u(2) << ");" << std::endl;
-		std::cout << "sqrt(" << v(0) * v(0) + 3 * v(1) * v(1) + v(2) * v(2) << ");" << std::endl;
+		cout << u(0) * v(0) + 3 * u(1) * v(1) + u(2) * v(2) << endl;
+		cout << "sqrt(" << u(0) * u(0) + 3 * u(1) * u(1) + u(2) * u(2) << ");" << endl;
+		cout << "sqrt(" << v(0) * v(0) + 3 * v(1) * v(1) + v(2) * v(2) << ");" << endl;
 
 		VectorXf uv(3);
 		uv = u - v;
 		
 		// <u-v, u-v>
-		std::cout << "sqrt(" << uv(0) * uv(0) + 3 * uv(1) * uv(1) + uv(2) * uv(2) << ");" << std::endl;
+		cout << "sqrt(" << uv(0) * uv(0) + 3 * uv(1) * uv(1) + uv(2) * uv(2) << ");" << endl;
 	}
 
 	void question3() {
@@ -44,10 +44,10 @@ namespace MATH2318::HW8 {
 		VectorXf v(4);
 		v << 1, 0, -1, 2;
 
-		std::cout << u.dot(v) << std::endl;
-		std::cout << "sqrt(" << u.squaredNorm() << ");" << std::endl;
-		std::cout << "sqrt(" << v.squaredNorm() << ");" << std::endl;
-		std::cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << std::endl;
+		cout << u.dot(v) << endl;
+		cout << "sqrt(" << u.squaredNorm() << ");" << endl;
+		cout << "sqrt(" << v.squaredNorm() << ");" << endl;
+		cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << endl;
 	}
 
 	void question4() {
@@ -57,16 +57,16 @@ namespace MATH2318::HW8 {
 		// <p,q> = a0 * b0 + a1 * b1 + a2 * b2
 		float pq = 3 * 0 + -1 * 1 + 4 * -1;
 
-		std::cout << pq << std::endl;
+		cout << pq << endl;
 		
 		// |p| = sqrt(<p,p>)
 
-		std::cout << "sqrt(" << (3*3 + -1*-1 + 4*4) << ");" << std::endl;
-		std::cout << "sqrt(" << (0*0 + 1*1 -1*-1) << ");" << std::endl;
+		cout << "sqrt(" << (3*3 + -1*-1 + 4*4) << ");" << endl;
+		cout << "sqrt(" << (0*0 + 1*1 -1*-1) << ");" << endl;
 
 		// |p-q| = d<p,q>
 
-		std::cout << "sqrt(" << ((3-0)*(3-0) + (-1-1)*(-1-1) + (4 - -1)*(4 - -1)) << ");" << std::endl;
+		cout << "sqrt(" << ((3-0)*(3-0) + (-1-1)*(-1-1) + (4 - -1)*(4 - -1)) << ");" << endl;
 
 	}
 
@@ -79,13 +79,13 @@ namespace MATH2318::HW8 {
 
 		float uv = u(0)*v(0) + 2*u(1)*v(1) + u(2)*v(2);
 
-		std::cout << acos(uv / (u.norm() * v.norm())) << std::endl;
+		cout << acos(uv / (u.norm() * v.norm())) << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-angle-vectors-x-2x3-g-x-4x2-f-g-f-x-g-x-dx-radians-q32263241
 	void question6() {
 		float fg = 0; // integral of the functions.
-		std::cout << acos(fg) << std::endl; // exactly pi / 2 radians
+		cout << acos(fg) << endl; // exactly pi / 2 radians
 	}
 
 	void question7() {
@@ -102,8 +102,8 @@ namespace MATH2318::HW8 {
 		//v << 1, 1, 2;
 		v << -1, 2, 1;
 
-		std::cout << Tools::proj_a_on_b(u, v) << std::endl;
-		std::cout << "~~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << Tools::proj_a_on_b(v, u) << std::endl;
+		cout << Tools::proj_a_on_b(u, v) << endl;
+		cout << "~~~~~~~~~~~~~~~~~" << endl;
+		cout << Tools::proj_a_on_b(v, u) << endl;
 	}
 }

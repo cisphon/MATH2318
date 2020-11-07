@@ -13,7 +13,7 @@ namespace MATH2318::TEST1 {
         VectorXf V(A.rows());
         V << 6, 2, 10, 4;
 
-        std::cout << A.fullPivHouseholderQr().solve(V);
+        cout << A.fullPivHouseholderQr().solve(V);
     }
 
     void question6() {
@@ -27,10 +27,10 @@ namespace MATH2318::TEST1 {
             3, 0, 1,
             8, -1, 6;
 
-        //std::cout << A * B << std::endl;
+        //cout << A * B << endl;
 
 
-        std::cout << B * A << std::endl;
+        cout << B * A << endl;
     }
 
     void question8() {
@@ -46,7 +46,7 @@ namespace MATH2318::TEST1 {
         C << 1, 0,
             0, -1;
 
-        std::cout << (B + C) * A << std::endl;
+        cout << (B + C) * A << endl;
     }
 
     void question9() {
@@ -55,13 +55,13 @@ namespace MATH2318::TEST1 {
             1, 4, 0;
 
         MatrixXf a = A.transpose() * A;
-        std::cout << a << std::endl << "~~~~~~~~~~" << std::endl;
+        cout << a << endl << "~~~~~~~~~~" << endl;
 
         MatrixXf b = A * A.transpose();
-        std::cout << b << std::endl << "~~~~~~~~~~" << std::endl;
+        cout << b << endl << "~~~~~~~~~~" << endl;
 
-        std::cout << Tools::is_symmetric(a) << std::endl;
-        std::cout << Tools::is_symmetric(b) << std::endl;
+        cout << Tools::is_symmetric(a) << endl;
+        cout << Tools::is_symmetric(b) << endl;
     }
 
     void question11() {
@@ -72,7 +72,7 @@ namespace MATH2318::TEST1 {
             0, 0, 0, 0,
             0, 0, 0, 17;
 
-        std::cout << A.inverse() << std::endl;
+        cout << A.inverse() << endl;
     }
 
     void question14() {
@@ -84,6 +84,6 @@ namespace MATH2318::TEST1 {
         VectorXf y(3);
         y << 4, 8, -8;
 
-        std::cout << L * y << std::endl;
+        cout << L * y << endl;
     }
 }

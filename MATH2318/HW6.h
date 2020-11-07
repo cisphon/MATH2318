@@ -12,19 +12,19 @@ namespace MATH2318::HW6 {
 
         VectorXf u(4);
         u << -62, 115, -120, -74;
-        std::cout << Tools::vectorxf_linear_combo_2(a, b, u) << std::endl;
+        cout << Tools::vectorxf_linear_combo_2(a, b, u) << endl;
 
         VectorXf v(4);
         v << 49 / 2.0f, 99 / 4.0f, -14, 19.0 / 2.0f;
-        std::cout << Tools::vectorxf_linear_combo_2_with_fractions(a, b, v) << std::endl;
+        cout << Tools::vectorxf_linear_combo_2_with_fractions(a, b, v) << endl;
 
         VectorXf w(4);
         w << -6, -17, 23 / 8.0f, 57 / 8.0f;
-        std::cout << Tools::vectorxf_linear_combo_2_with_fractions(a, b, w) << std::endl;
+        cout << Tools::vectorxf_linear_combo_2_with_fractions(a, b, w) << endl;
 
         VectorXf z(4);
         z << 14, -3, 7, 41 / 4.0f;
-        std::cout << Tools::vectorxf_linear_combo_2_with_fractions(a, b, z) << std::endl;
+        cout << Tools::vectorxf_linear_combo_2_with_fractions(a, b, z) << endl;
     }
 
     void question2() {
@@ -40,7 +40,7 @@ namespace MATH2318::HW6 {
         M << -9, 4,
             7, 2;
 
-        std::cout << Tools::matrixxf_linear_combo_2(A, B, M) << std::endl;
+        cout << Tools::matrixxf_linear_combo_2(A, B, M) << endl;
     }
 
     void question3() {
@@ -56,6 +56,6 @@ namespace MATH2318::HW6 {
         VectorXf r(2);
         r << 0, 0;
 
-        std::cout << Tools::vectorxf_linear_combo_3(s1, s2, s3, r) << std::endl;
+        cout << Tools::vectorxf_linear_combo_3(s1, s2, s3, r) << endl;
     }
 }

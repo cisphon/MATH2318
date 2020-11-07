@@ -13,7 +13,7 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(2);
 		v << 2, 1;
 
-		std::cout << Tools::vectorxf_linear_combo_2(u, w, v) << std::endl;
+		cout << Tools::vectorxf_linear_combo_2(u, w, v) << endl;
 	}
 
 	void question2() {
@@ -23,11 +23,11 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(5);
 		v << -3, -5, 6, 3, 8;
 
-		std::cout << u - v << std::endl << "~~~~~~~~~" << std::endl;
+		cout << u - v << endl << "~~~~~~~~~" << endl;
 
-		std::cout << 2*(u + 3*v) << std::endl << "~~~~~~~~~" << std::endl;
+		cout << 2*(u + 3*v) << endl << "~~~~~~~~~" << endl;
 
-		std::cout << 2 * v - u << std::endl;
+		cout << 2 * v - u << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/determine-whether-set-together-indicated-operations-vector-space-identify-one-ten-vector-s-q7153923
@@ -92,7 +92,7 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(2);
 		v << 3, -3;
 
-		std::cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << std::endl;
+		cout << "sqrt(" << Tools::distanceSquared(u, v) << ");" << endl;
 	}
 
 	// https://www.chegg.com/homework-help/questions-and-answers/find-angle-vectors-round-answer-three-decimal-places-u-4-2-v-1-3-q11708077
@@ -103,7 +103,7 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(2);
 		v << -1, -3;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	void question31() {
@@ -113,7 +113,7 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(3);
 		v << 4, -3, 4;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	void question32() {
@@ -123,7 +123,7 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(4);
 		v << 3, 3, 3, 3;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	void question33() {
@@ -145,7 +145,7 @@ namespace MATH2318::PTEST2 {
 
 		float uv =  u(0) * v(0) + 2 * u(1) * v(1);
 
-		std::cout << acos(uv / (u.norm() * v.norm())) << std::endl << std::endl;
+		cout << acos(uv / (u.norm() * v.norm())) << endl << endl;
 	}
 
 
@@ -157,8 +157,8 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(2);
 		v << 4, 4;
 
-		std::cout << Tools::proj_a_on_b(u, v) << std::endl << "~~~~~~" << std::endl;
-		std::cout << Tools::proj_a_on_b(v, u) << std::endl << "~~~~~~" << std::endl;
+		cout << Tools::proj_a_on_b(u, v) << endl << "~~~~~~" << endl;
+		cout << Tools::proj_a_on_b(v, u) << endl << "~~~~~~" << endl;
 	}
 
 	void question36() {
@@ -168,8 +168,8 @@ namespace MATH2318::PTEST2 {
 		VectorXf v(3);
 		v << -1, -1, 2;
 
-		std::cout << Tools::proj_a_on_b(u, v) << std::endl << "~~~~~~" << std::endl;
-		std::cout << Tools::proj_a_on_b(v, u) << std::endl << "~~~~~~" << std::endl;
+		cout << Tools::proj_a_on_b(u, v) << endl << "~~~~~~" << endl;
+		cout << Tools::proj_a_on_b(v, u) << endl << "~~~~~~" << endl;
 	}
 
 	void question37() {
@@ -182,7 +182,7 @@ namespace MATH2318::PTEST2 {
 		VectorXf c(3);
 		c << -4, -1, -17;
 
-		std::cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << std::endl;
+		cout << (Tools::is_orthogonal(a, b) && Tools::is_orthogonal(b, c)) << endl;
 	}
 
 	// just type the vectors into wolfram alpha and it will normalize it.
@@ -199,7 +199,7 @@ namespace MATH2318::PTEST2 {
 
 		VectorXf u1 = v1;  
 
-		//std::cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+		//cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << endl;
 
 		float v2u1 = v2.dot(u1);
 		float u1u1 = u1.dot(u1);
@@ -208,12 +208,12 @@ namespace MATH2318::PTEST2 {
 		VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
 
 		/*
-		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v2u1 << "/" << u1u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		cout << v2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v2u1 << "/" << u1u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
 		*/
 
-		//std::cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+		//cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << endl << "~~~~~~~~~~~" << endl;
 
 		float v3u1 = v3.dot(u1);
 		u1u1 = u1.dot(u1);
@@ -225,13 +225,13 @@ namespace MATH2318::PTEST2 {
 		VectorXf u3 = v3 - (v3u1 / u1u1) * u1 - (v3u2 / u2u2) * u2;
 
 		//
-		std::cout << v3 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v3u1 << "/" << u1u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v3u2 << "/" << u2u2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;		
+		cout << v3 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v3u1 << "/" << u1u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v3u2 << "/" << u2u2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u2 << endl << "~~~~~~~~~~~~~~~~" << endl;		
 
-		//std::cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+		//cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << endl << "~~~~~~~~~~~" << endl;
 
 	}
 
@@ -250,8 +250,8 @@ namespace MATH2318::PTEST2 {
 		float u1u1 = u1.dot(u1);
 
 		VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
-		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v2u1 << "/" << u1u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		cout << v2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v2u1 << "/" << u1u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
 	}
 }

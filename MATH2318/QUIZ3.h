@@ -6,7 +6,7 @@ namespace MATH2318::QUIZ3 {
     void question1() {
         VectorXf vec = Tools::points_to_vector(0, 0, -3, 5);
 
-        std::cout << vec << std::endl;
+        cout << vec << endl;
     }
 
     void question2() {
@@ -16,11 +16,11 @@ namespace MATH2318::QUIZ3 {
         VectorXf v(3);
         v << 2, -1, 2;
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~" << std::endl;
-        std::cout << u - v << std::endl;
+        cout << "~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << u - v << endl;
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~" << std::endl;
-        std::cout << v - u << std::endl;
+        cout << "~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << v - u << endl;
     }
 
     void question3() {
@@ -30,13 +30,13 @@ namespace MATH2318::QUIZ3 {
         VectorXf v(5);
         v << -5, -3, 3, 8, 6;
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~" << std::endl;
-        std::cout << u - v << std::endl;
+        cout << "~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << u - v << endl;
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~" << std::endl;
-        std::cout << 2 * (u + 3 * v) << std::endl;
+        cout << "~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << 2 * (u + 3 * v) << endl;
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~" << std::endl;
-        std::cout << 2 * v - u << std::endl;
+        cout << "~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << 2 * v - u << endl;
     }
 }

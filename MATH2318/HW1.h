@@ -18,11 +18,11 @@ namespace MATH2318::HW1 {
         // Add 5 times Row 1 to Row 3
         m2.row(2) += m.row(0) * 5;
 
-        std::cout << "Original Matrix" << std::endl;
-        std::cout << m << std::endl << std::endl;
+        cout << "Original Matrix" << endl;
+        cout << m << endl << endl;
 
-        std::cout << "New Row-Equivalent Matrix" << std::endl;
-        std::cout << m2 << std::endl;
+        cout << "New Row-Equivalent Matrix" << endl;
+        cout << m2 << endl;
     }
 
     void question9() {
@@ -33,7 +33,7 @@ namespace MATH2318::HW1 {
         VectorXf v(m.rows());
         v << 3, 0, 1;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 
     void question13() {
@@ -46,7 +46,7 @@ namespace MATH2318::HW1 {
         VectorXf v(m.rows());
         v << -31, -14, 48;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 
     void question14() {
@@ -59,7 +59,7 @@ namespace MATH2318::HW1 {
         VectorXf v(m.rows());
         v << -7, -5, -3;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 
     void question15() {
@@ -71,6 +71,6 @@ namespace MATH2318::HW1 {
         VectorXf v(m.rows());
         v << 28, 38;
 
-        std::cout << m.colPivHouseholderQr().solve(v) << std::endl;
+        cout << m.colPivHouseholderQr().solve(v) << endl;
     }
 }

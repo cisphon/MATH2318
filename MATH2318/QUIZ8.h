@@ -6,7 +6,7 @@ namespace MATH2318::QUIZ8 {
 		A << 3, 4,
 			-7, 5;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question2() {
@@ -19,7 +19,7 @@ namespace MATH2318::QUIZ8 {
 			0, 3, 2,
 			-1, 4, 3;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question4() {
@@ -28,7 +28,7 @@ namespace MATH2318::QUIZ8 {
 			0, 5, 5,
 			0, 0, -4;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question5() {
@@ -37,7 +37,7 @@ namespace MATH2318::QUIZ8 {
 			6, 5, 0,
 			-7, 2, -2;
 
-		std::cout << A.determinant() << std::endl;
+		cout << A.determinant() << endl;
 	}
 
 	void question6() {
@@ -53,9 +53,9 @@ namespace MATH2318::QUIZ8 {
 			A(8) = x;
 
 			if (A.determinant() == 0)
-				std::cout << x << ' ';
+				cout << x << ' ';
 		}
-		std::cout << std::endl;
+		cout << endl;
 	}
 
 	void question7() {
@@ -63,7 +63,7 @@ namespace MATH2318::QUIZ8 {
 		A << 2, 5,
 			1, 3;
 
-		std::cout << A.inverse().determinant() << std::endl;
+		cout << A.inverse().determinant() << endl;
 	}
 
 	void question8() {
@@ -73,7 +73,7 @@ namespace MATH2318::QUIZ8 {
 			3, -7, 7;
 
 		if (A.determinant() == 0)
-			std::cout << "The system does not have a unique solution because the determinant of the coefficient matrix is zero." << std::endl;
+			cout << "The system does not have a unique solution because the determinant of the coefficient matrix is zero." << endl;
 	}
 
 	void question9() {
@@ -83,8 +83,8 @@ namespace MATH2318::QUIZ8 {
 			1, 1, 1;
 
 		if (Tools::is_singular(A))
-			std::cout << "Singular" << std::endl;
+			cout << "Singular" << endl;
 		else
-			std::cout << "Nonsingular" << std::endl;
+			cout << "Nonsingular" << endl;
 	}
 }

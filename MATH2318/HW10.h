@@ -16,9 +16,9 @@ namespace MATH2318::HW10 {
 		s2two << 0, 0, 5, -5;
 
 		if (Tools::is_orthogonal(s1, s2one) && Tools::is_orthogonal(s1, s2two))
-			std::cout << "Orthogonal" << std::endl;
+			cout << "Orthogonal" << endl;
 		else
-			std::cout << "Not Orthogonal" << std::endl;
+			cout << "Not Orthogonal" << endl;
 	}
 
 	// second problem on this \/
@@ -28,7 +28,7 @@ namespace MATH2318::HW10 {
 		A << 1, 7, 1,
 			0, 8, 0;
 
-		std::cout << A.transpose() << std::endl;
+		cout << A.transpose() << endl;
 	}
 
 	// http://www.math.odu.edu/~bogacki/cgi-bin/lat.cgi
@@ -39,7 +39,7 @@ namespace MATH2318::HW10 {
 			1, 1, 1, 4,
 			1, 3, 3, 8;
 
-		std::cout << A.transpose() << std::endl;
+		cout << A.transpose() << endl;
 	}
 
 	// https://www.slader.com/discussion/question/find-a-least-squares-solution-of-3/
@@ -55,8 +55,8 @@ namespace MATH2318::HW10 {
 			-3,
 			2;
 
-		std::cout << A.transpose() * A << std::endl << "~~~~~~~~~~~~" << std::endl;
-		std::cout << A.transpose() * b << std::endl << "~~~~~~~~~~~~" << std::endl;
+		cout << A.transpose() * A << endl << "~~~~~~~~~~~~" << endl;
+		cout << A.transpose() * b << endl << "~~~~~~~~~~~~" << endl;
 	}
 
 	//  x1 y1    x2 y2    x3 y3
@@ -76,7 +76,7 @@ namespace MATH2318::HW10 {
 		float sumXY = x(0) * y(0) + x(1) * y(1) + x(2) * y(2);
 		float n = x.size(); // we have 3 data points!
 
-		std::ostringstream ss;
+		ostringstream ss;
 		ss << "y = ";
 
 		float a_numerator = sumY * sumX2 - sumX * sumXY;
@@ -87,6 +87,6 @@ namespace MATH2318::HW10 {
 		float b_denominator = n * sumX2 - (sumX) * (sumX);
 		ss << b_numerator << '/' << b_denominator << 'x';
 
-		std::cout << ss.str() << std::endl;
+		cout << ss.str() << endl;
 	}
 }

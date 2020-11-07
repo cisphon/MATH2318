@@ -11,6 +11,7 @@
 #define DEBUGGING false
 
 using namespace Eigen;
+using namespace std;
 
 namespace MATH2318::Tools {
 
@@ -36,8 +37,8 @@ namespace MATH2318::Tools {
         return result;
     }
 
-    std::vector<float> minor_of_matrix(MatrixXf A, int r, int c) {
-        std::vector<float> v;
+    vector<float> minor_of_matrix(MatrixXf A, int r, int c) {
+        vector<float> v;
 
         for (int row = 0; row < A.rows(); row++)
         {
@@ -60,11 +61,11 @@ namespace MATH2318::Tools {
 
     VectorXf proj_a_on_b(VectorXf a, VectorXf b) {
 #if DEBUGGING
-        std::cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << std::endl;
-        std::cout << a.dot(b) << std::endl;
-        std::cout << a.squaredNorm() << std::endl;
-        std::cout << a << std::endl;
-        std::cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << std::endl;
+        cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << endl;
+        cout << a.dot(b) << endl;
+        cout << a.squaredNorm() << endl;
+        cout << a << endl;
+        cout << "~~~~~~~~~~~~~~DEBUGGING~~~~~~~~~~~~~~" << endl;
 #endif
 
         return (a.dot(b) / a.squaredNorm()) * b;
@@ -118,9 +119,9 @@ namespace MATH2318::Tools {
         float rads = acos(d / (a * b));
 
 #if DEBUGGING
-        std::cout << u.squaredNorm() << std::endl;
-        std::cout << v.squaredNorm() << std::endl;
-        std::cout << u.dot(v) << std::endl;
+        cout << u.squaredNorm() << endl;
+        cout << v.squaredNorm() << endl;
+        cout << u.dot(v) << endl;
 #endif
 
         return rads;
@@ -167,12 +168,12 @@ namespace MATH2318::Tools {
 
         if (orthogonal || parallel) {
             if (orthogonal)
-                std::cout << "Orthogonal" << std::endl;
+                cout << "Orthogonal" << endl;
             if (parallel)
-                std::cout << "Parallel" << std::endl;
+                cout << "Parallel" << endl;
         }
         else {
-            std::cout << "Neither" << std::endl;
+            cout << "Neither" << endl;
         }
     }
 
@@ -184,10 +185,10 @@ namespace MATH2318::Tools {
         return A.transpose() == -A;
     }
     
-    std::string float_to_ratio(float f) {
+    string float_to_ratio(float f) {
         // if it can be expressed as an int, don't compute for a ratio.
         if (static_cast<int>(f) == f)
-            return std::to_string(static_cast<int>(f));
+            return to_string(static_cast<int>(f));
 
         for (int n = -100; n <= 100; ++n)
         {
@@ -196,7 +197,7 @@ namespace MATH2318::Tools {
                 if (n / static_cast<float> (d) == f)
                 {
                     int gcd = std::gcd(n, d);
-                    return std::to_string(n / gcd) + "/" + std::to_string(d / gcd);
+                    return to_string(n / gcd) + "/" + to_string(d / gcd);
                 }
             }
         }
@@ -209,16 +210,16 @@ namespace MATH2318::Tools {
         {
             for (int c = 0; c < A.cols(); ++c)
             {
-                std::cout << float_to_ratio(A(r, c)) << " ";
+                cout << float_to_ratio(A(r, c)) << " ";
             }
-            std::cout << std::endl;
+            cout << endl;
         }
     }
 
     MatrixXf pow_of_matrix(MatrixXf A, float n) {
         for (int r = 0; r < A.rows(); ++r)
             for (int c = 0; c < A.cols(); ++c)
-                A(r, c) = std::pow(A(r, c), n);
+                A(r, c) = pow(A(r, c), n);
         return A;
     }
 
@@ -228,12 +229,12 @@ namespace MATH2318::Tools {
         return vec;
     }
 
-    std::string vectorxf_linear_combo_2(VectorXf u, VectorXf v, VectorXf r) {
+    string vectorxf_linear_combo_2(VectorXf u, VectorXf v, VectorXf r) {
         // shitty iterative solution to find linear combo
         for (float a = -100; a <= 100; ++a) {
             for (float b = -100; b <= 100; ++b) {
                 if (a * u + b * v == r) {
-                    return std::to_string(a) + " " + std::to_string(b);
+                    return to_string(a) + " " + to_string(b);
                     break;
                 }
             }
@@ -242,13 +243,13 @@ namespace MATH2318::Tools {
         return "IMPOSSIBLE";
     }
 
-    std::string vectorxf_linear_combo_2_with_fractions(VectorXf u, VectorXf v, VectorXf r) {
+    string vectorxf_linear_combo_2_with_fractions(VectorXf u, VectorXf v, VectorXf r) {
         float width = 100;
         // shitty iterative solution to find linear combo
         for (float a = -width; a <= width; ++a) {
             for (float b = -width; b <= width; ++b) {
                 if (a * u + b * v == r) {
-                    return std::to_string(a) + " " + std::to_string(b);
+                    return to_string(a) + " " + to_string(b);
                     break;
                 }
             }
@@ -268,21 +269,21 @@ namespace MATH2318::Tools {
                         float b = n2 / d2;
 
                         if ((a * u) + (b * v) == r) {
-                            return std::to_string(n1) + '/' + std::to_string(d1) + ' '
-                                + std::to_string(n2) + '/' + std::to_string(d2);
+                            return to_string(n1) + '/' + to_string(d1) + ' '
+                                + to_string(n2) + '/' + to_string(d2);
                         }
                         else if ((a * u) + (-b * v) == r) {
-                            return std::to_string(n1) + '/' + std::to_string(d1) + ' ' + '-'
-                                + std::to_string(n2) + '/' + std::to_string(d2);
+                            return to_string(n1) + '/' + to_string(d1) + ' ' + '-'
+                                + to_string(n2) + '/' + to_string(d2);
                         }
                         else if ((-a * u) + (b * v) == r) {
-                            return '-' + std::to_string(n1) + '/' + std::to_string(d1) + ' '
-                                + std::to_string(n2) + '/' + std::to_string(d2);
+                            return '-' + to_string(n1) + '/' + to_string(d1) + ' '
+                                + to_string(n2) + '/' + to_string(d2);
                         }
 
                         else if ((-a * u) + (-b * v) == r) {
-                            return '-' + std::to_string(n1) + '/' + std::to_string(d1) + ' ' + '-'
-                                + std::to_string(n2) + '/' + std::to_string(d2);
+                            return '-' + to_string(n1) + '/' + to_string(d1) + ' ' + '-'
+                                + to_string(n2) + '/' + to_string(d2);
                         }
                     }
                 }
@@ -292,7 +293,7 @@ namespace MATH2318::Tools {
         return "IMPOSSIBLE";
     }
 
-    std::string vectorxf_linear_combo_3(VectorXf u1, VectorXf u2,
+    string vectorxf_linear_combo_3(VectorXf u1, VectorXf u2,
         VectorXf u3, VectorXf v) {
         float width = 50;
         // shitty iterative solution to find linear combo
@@ -300,7 +301,7 @@ namespace MATH2318::Tools {
             for (float b = -width; b <= width; ++b) {
                 for (float c = -width; c <= width; ++c) {
                     if (a * u1 + b * u2 + c * u3 == v) {
-                        return std::to_string(a) + " " + std::to_string(b) + " " + std::to_string(c);
+                        return to_string(a) + " " + to_string(b) + " " + to_string(c);
                     }
                 }
             }
@@ -309,7 +310,7 @@ namespace MATH2318::Tools {
         return "IMPOSSIBLE";
     }
 
-    std::string matrixxf_linear_combo_2(MatrixXf A, MatrixXf B, MatrixXf M) {
+    string matrixxf_linear_combo_2(MatrixXf A, MatrixXf B, MatrixXf M) {
         int width = 100;
         for (int a = -width; a <= width; ++a)
         {
@@ -317,7 +318,7 @@ namespace MATH2318::Tools {
             {
                 if (a * A + b * B == M)
                 {
-                    return std::to_string(a) + ' ' + std::to_string(b);
+                    return to_string(a) + ' ' + to_string(b);
                 }
             }
         }

@@ -8,9 +8,9 @@ namespace MATH2318::TEST2 {
 		VectorXf v(5);
 		v << 8, -5, 3, 6, -3;
 
-		std::cout << u - v << std::endl << "~~~~~~~~~" << std::endl;
-		std::cout << 2*(u + 3*v) << std::endl << "~~~~~~~~~" << std::endl;
-		std::cout << 2*v - u << std::endl << "~~~~~~~~~" << std::endl;
+		cout << u - v << endl << "~~~~~~~~~" << endl;
+		cout << 2*(u + 3*v) << endl << "~~~~~~~~~" << endl;
+		cout << 2*v - u << endl << "~~~~~~~~~" << endl;
 	}
 
 	void question12() {
@@ -20,9 +20,9 @@ namespace MATH2318::TEST2 {
 		VectorXf v(4);
 		v << 2, 0, 3, 1;
 
-		std::cout << "sqrt(" << u.squaredNorm() << ");" << std::endl;
-		std::cout << "sqrt(" << v.squaredNorm() << ");" << std::endl;
-		std::cout << "sqrt(" << (u + v).squaredNorm() << ");" << std::endl;
+		cout << "sqrt(" << u.squaredNorm() << ");" << endl;
+		cout << "sqrt(" << v.squaredNorm() << ");" << endl;
+		cout << "sqrt(" << (u + v).squaredNorm() << ");" << endl;
 	}
 
 	void question7() {
@@ -38,7 +38,7 @@ namespace MATH2318::TEST2 {
 		VectorXf u(3);
 		u << 15, 8, 15;
 
-		std::cout << Tools::vectorxf_linear_combo_3(a, b, c, u) << std::endl;
+		cout << Tools::vectorxf_linear_combo_3(a, b, c, u) << endl;
 	}
 
 	void question13() {
@@ -48,7 +48,7 @@ namespace MATH2318::TEST2 {
 		VectorXf v(4);
 		v << 4, 4, 4, 4;
 
-		std::cout << Tools::angle_between_two_vectors_radians(u, v) << std::endl;
+		cout << Tools::angle_between_two_vectors_radians(u, v) << endl;
 	}
 
 	void question15() {
@@ -60,7 +60,7 @@ namespace MATH2318::TEST2 {
 
 		float uv = u(0)*v(0) + 2*u(1)*v(1) + u(2)*v(2);
 
-		std::cout << acos(uv / (u.norm() * v.norm())) << std::endl;
+		cout << acos(uv / (u.norm() * v.norm())) << endl;
 	}
 
 	void question16() {
@@ -75,7 +75,7 @@ namespace MATH2318::TEST2 {
 
 		VectorXf u1 = v1;
 
-		std::cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << std::endl;
+		cout << u1 << "/" << "sqrt(" << u1.squaredNorm() << ");" << endl;
 
 		float v2u1 = v2.dot(u1);
 		float u1u1 = u1.dot(u1);
@@ -84,12 +84,12 @@ namespace MATH2318::TEST2 {
 		VectorXf u2 = v2 - (v2u1 / u1u1) * u1;
 
 		/*
-		std::cout << v2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v2u1 << "/" << u1u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		cout << v2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v2u1 << "/" << u1u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
 		*/
 
-		//std::cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+		//cout << u2 << "/" << "sqrt(" << u2.squaredNorm() << ");" << endl << "~~~~~~~~~~~" << endl;
 
 		float v3u1 = v3.dot(u1);
 		u1u1 = u1.dot(u1);
@@ -102,15 +102,15 @@ namespace MATH2318::TEST2 {
 
 		
 		/*
-		std::cout << v3 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v3u1 << "/" << u1u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u1 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << v3u2 << "/" << u2u2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
-		std::cout << u2 << std::endl << "~~~~~~~~~~~~~~~~" << std::endl;
+		cout << v3 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v3u1 << "/" << u1u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u1 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << v3u2 << "/" << u2u2 << endl << "~~~~~~~~~~~~~~~~" << endl;
+		cout << u2 << endl << "~~~~~~~~~~~~~~~~" << endl;
 		*/
 
 
-		//std::cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << std::endl << "~~~~~~~~~~~" << std::endl;
+		//cout << u3 << "/" << "sqrt(" << u3.squaredNorm() << ");" << endl << "~~~~~~~~~~~" << endl;
 
 	}
 }
