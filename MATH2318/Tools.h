@@ -15,6 +15,20 @@ using namespace std;
 
 namespace MATH2318::Tools {
 
+    bool is_diagonal(MatrixXf& A) {
+        for (int i = 0; i != A.rows(); ++i)
+        {
+            for (int j = 0; j != A.cols(); ++j)
+            {
+                if (i != j && (A(i, j) != 0))
+                    return false;
+                else if (i == j && (A(i, j) == 0))
+                    return false;
+            }
+        }
+        return true;
+    }
+
     int gcd(int a, int b)
     {
         if (a == 0)

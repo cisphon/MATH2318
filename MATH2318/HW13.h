@@ -35,4 +35,16 @@ namespace MATH2318::HW13 {
 		cout << A * x2 << endl;
 		cout << A * x3 << endl;
 	}
+	
+	// https://www.chegg.com/homework-help/questions-and-answers/find-characteristic-equation-eigenvalues-corresponding-eigenvectors-matrix-0-3-9-4-4-18-0--q16339129
+	void question3() {
+		MatrixXf A(2, 2);
+		A << 8, -4,
+			-2, 1;
+
+		//MatrixXf LI = MatrixXf::Identity(A.rows(), A.cols());
+
+	    //https://www.wolframalpha.com/input/?i=determinant+of+%7B%7B0-x%2C-3%2C3%7D%2C%7B-4%2C4-x%2C-6%7D%2C%7B0%2C0%2C4-x%7D%7D
+		//https://www.symbolab.com/solver/matrix-eigenvectors-calculator
+	}
 }
