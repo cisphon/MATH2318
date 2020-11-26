@@ -246,6 +246,24 @@ namespace MATH2318::PTEST3 {
 		std::cout << P.transpose() * A * P << std::endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
 	}
 
+	// https://www.chegg.com/homework-help/questions-and-answers/provide-answers-b-c--keep-mind-b-c-may-choose-multiple-answers-type-clearly-choice-s-q30528479
+	void question20() {
+		MatrixXf A(3, 3);
+		A << -3, 2, -5,
+			2, 4, 3,
+			-5, 3, 9;
+
+		cout << Tools::is_symmetric(A) << endl;
+
+		// y1
+		// y1
+		// y1
+		// y1
+		// n
+		// y2
+		// y3
+	}
+
 	void question21() {
 		MatrixXf A(2, 3);
 		A << 3, -5, 4,
