@@ -120,52 +120,120 @@ namespace MATH2318::PTEST3 {
 		// divide by -1 or 2 or whatever!
 	}
 
+	// https://www.chegg.com/homework-help/questions-and-answers/find-characteristic-equation-eigenvalues-corresponding-eigenvectors-matrix-2-2-3-2-0-0-1-2-q38413105
 	void question13() {
 		MatrixXf A(2, 2);
-		A << 12, -3,
-			-4, 1;
+		A << 6, -2,
+			-3, 1;
 
+		cout << "(" << A(0) << " - L)(" << A(3) << " - L) + " << - A(1) * A(2) << " = 0" <<endl;
 
+		// NOT BASED ON LOCKED CONTENT.
+		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator		
+	}
+
+	// https://www.chegg.com/homework-help/questions-and-answers/consider-following-1-12-1-6-p-3-4-1-1-verify-diagonalizable-computing-p-1ap-p-1ap-incorrec-q33563397
+	void question14() {
+		MatrixXf A(3, 3);
+		A << -5, 1, 0,
+			0, -1, 0,
+			2, 0, -2;
+
+		MatrixXf P(3, 3);
+		P << 0, 1, -3,
+			0, 4, 0,
+			1, 2, 2;
+
+		MatrixXf R = P.inverse() * A * P;
+
+		cout << R << endl;
+
+		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/
+
+		cout << R.eigenvalues() << endl;
+	}
+
+	void question15() {
+		MatrixXf A(2, 2);
+		A << -1, -3 / 2.0,
+			1 / 2.0, 1;
+
+		// based upon the eigen vectors...
+		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/
+
+		MatrixXf P(2, 2);
+		P << -3, -1, // first num from each vector
+			1, 1;
+
+		cout << P << endl << "~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+
+		cout << P.inverse() * A * P << endl;
 	}
 
 	void question16() {
+		MatrixXf A(3, 3);
+		A << 2, -2, 5,
+			0, 3, -2,
+			0, -1, 2;
 
+		// based upon the eigen vectors...
+		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/
+
+		MatrixXf P(3, 3);
+		P << -3, 1, 9,
+			1, 0, -4,
+			1, 0, 2;
+
+		cout << P << endl << "~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+
+		cout << P.inverse() * A * P << endl;
 	}
 
 	void question18() {
 		MatrixXf A(2, 2);
-		A << 3, 3,
-			3, 3;
+		A << 1, 1,
+			1, 1;
 		
-		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/eigenvectors%20%5Cbegin%7Bpmatrix%7D2%262%5C%5C%202%262%5Cend%7Bpmatrix%7D
+		// BASED ON LOCKEDDDDDD!!!!!!!!!!!!!!!!!
+		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/
 		VectorXf V1(2);
 		V1 << 1, 1;
+		std::cout << "sqrt(" << V1.squaredNorm() << ");" << std::endl;
+		V1 = V1 / V1.norm();
 
 		VectorXf V2(2);
 		V2 << -1, 1;
+		std::cout << "sqrt(" << V2.squaredNorm() << ");" << std::endl;
+		V2 = V2 / V2.norm();
 
+		MatrixXf P(2, 2);
+		P.row(0) = V1;
+		P.row(1) = V2;
 
+		std::cout << P << std::endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+		std::cout << P.transpose() * A * P << std::endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
 	}
 
 	void question19() {
 		MatrixXf A(3, 3);
-		A << 6, 0, -12,
-			0, -6, 12,
-			-12, 12, 0;
-
+		A << 0, 10, 10,
+			10, 5, 0,
+			10, 0, -5;
+		
+		// BASED ON LOCKEDDDDDD!!!!!!!!!!!!!!!!!
 		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/
 		VectorXf V1(3);
-		V1 << 2, 2, 1;
+		V1 << 1, -2, 2;
 		std::cout << "sqrt(" << V1.squaredNorm() << ");" << std::endl;
 		V1 = V1 / V1.norm();
 
 		VectorXf V2(3);
-		V2 << 1, -2, 2;
+		V2 << -2, 1, 2;
 		std::cout << "sqrt(" << V2.squaredNorm() << ");" << std::endl;
 		V2 = V2 / V2.norm();
 
 		VectorXf V3(3);
-		V3 << -2, 1, 2;
+		V3 << 2, 2, 1;
 		std::cout << "sqrt(" << V3.squaredNorm() << ");" << std::endl;
 		V3 = V3 / V3.norm();
 

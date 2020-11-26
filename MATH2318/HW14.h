@@ -104,23 +104,24 @@ namespace MATH2318::HW14 {
 
 	void question12() {
 		MatrixXf A(3, 3);
-		A << 0, -4, 0,
-			-4, 0, 3,
-			0, 3, 0;
+		A << 5, 10, 0,
+			10, 0, 10,
+			0, 10, -5;
 
+		// BASED ON LOCKED!
 		// https://www.symbolab.com/solver/matrix-eigenvectors-calculator/
 		VectorXf V1(3);
-		V1 << -4, -5, 3;
+		V1 << -2, 1, 2;
 		std::cout << "sqrt(" << V1.squaredNorm() << ");" << std::endl;
 		V1 = V1 / V1.norm();
 
 		VectorXf V2(3);
-		V2 << 3, 0, 4;
+		V2 << 1, -2, 2;
 		std::cout << "sqrt(" << V2.squaredNorm() << ");" << std::endl;
 		V2 = V2 / V2.norm();
 
 		VectorXf V3(3);
- 		V3 << -4, 5, 3;
+		V3 << 2, 2, 1;
 		std::cout << "sqrt(" << V3.squaredNorm() << ");" << std::endl;
 		V3 = V3 / V3.norm();
 
