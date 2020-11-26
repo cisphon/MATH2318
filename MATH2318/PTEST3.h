@@ -50,7 +50,21 @@ namespace MATH2318::PTEST3 {
 
 	// https://www.chegg.com/homework-help/questions-and-answers/let-t-r3-r3-linear-transformation-t-1-0-0-2-4-1-t-0-1-0-3-2-1-t-0-0-1-2-2-0--find-indicate-q25637459
 	void question7() {
-		
+		int a = 2, b = 1, c = -4;
+
+		VectorXf x(3);
+		x << 4, -1, 2;
+
+		VectorXf y(3);
+		y << 1, -2, 3;
+
+		VectorXf z(3);
+		z << 0, 2, -2;
+
+		VectorXf R(3);
+		R << (x(0)*a + y(0)*b + z(0)*c), (x(1) * a + y(1) * b + z(1) * c), (x(2)*a + y(2)*b + z(2)*c);
+
+		cout << R << endl;
 	}
 
 	void question8() {
@@ -71,6 +85,20 @@ namespace MATH2318::PTEST3 {
 			0, 8, -1;
 
 		cout << A << endl;
+	}
+
+	// https://www.chegg.com/homework-help/questions-and-answers/consider-following-t-reflection-origin-r2-t-x-y-x-y-v-2-5--find-standard-matrix-linear-tra-q13874755
+	void question10() {
+		MatrixXf A(2, 2);
+		A << -1, 0,
+			0, -1;
+		
+		VectorXf v(2);
+		v << 3, 4;
+
+		VectorXf image = A * v;
+
+		cout << image << endl;
 	}
 
 	void question11() {
