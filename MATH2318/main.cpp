@@ -7,6 +7,7 @@
 #include "HW15.h"
 
 #include "TEST2.h"
+#include "TEST3.h"
 
 #include "PTEST2.h"
 #include "PTEST3.h"
@@ -18,6 +19,6 @@
 
 #if USING_MAIN
 int main() {
-	MATH2318::PTEST3::question20();
+	MATH2318::TEST3::question8();
 }	
 #endif
